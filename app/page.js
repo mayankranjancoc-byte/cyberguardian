@@ -4,7 +4,7 @@ export default function Home() {
             {/* Hero Section - Simple and Clear */}
             <div className="container" style={{ textAlign: 'center', paddingTop: '4rem', paddingBottom: '2rem' }}>
                 <div className="floating" style={{
-                    fontSize: '6rem',
+                    fontSize: '4.5rem',
                     marginBottom: '1.5rem',
                     filter: 'drop-shadow(0 0 30px rgba(102, 126, 234, 0.8))'
                 }}>
@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="grid">
                     <a href="/chat" style={{ textDecoration: 'none' }}>
                         <div className="card card-clickable">
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>💬</div>
+                            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>💬</div>
                             <h3>AI Assistant</h3>
                             <p>Ask questions and get instant security advice</p>
                         </div>
@@ -107,7 +107,7 @@ export default function Home() {
 
                     <a href="/scanner" style={{ textDecoration: 'none' }}>
                         <div className="card card-clickable">
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🔍</div>
+                            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🔍</div>
                             <h3>Scan QR Codes</h3>
                             <p>Check QR codes and images for hidden threats</p>
                         </div>
@@ -115,7 +115,7 @@ export default function Home() {
 
                     <a href="/community" style={{ textDecoration: 'none' }}>
                         <div className="card card-clickable">
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🌍</div>
+                            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌍</div>
                             <h3>Threat Alerts</h3>
                             <p>See what scams are happening right now</p>
                         </div>
@@ -123,7 +123,7 @@ export default function Home() {
 
                     <a href="/dashboard" style={{ textDecoration: 'none' }}>
                         <div className="card card-clickable">
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📊</div>
+                            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>📊</div>
                             <h3>Your Progress</h3>
                             <p>Track your security learning and achievements</p>
                         </div>
