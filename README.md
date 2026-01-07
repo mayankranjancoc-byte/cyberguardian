@@ -4,7 +4,13 @@
 
 Making enterprise-grade cybersecurity accessible to everyone—from everyday users to security professionals.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge&logo=vercel)](https://cyberguardian-ai.vercel.app)
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js) ![AI](https://img.shields.io/badge/AI-Gemini-blue?style=flat) ![Security](https://img.shields.io/badge/Security-VirusTotal-red?style=flat) ![License](https://img.shields.io/badge/License-Educational-green?style=flat)
+
+## 🌐 Live Demo
+
+**Try it now:** [https://cyberguardian-ai.vercel.app](https://cyberguardian-ai.vercel.app)
 
 ---
 
