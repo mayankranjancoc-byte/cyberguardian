@@ -4,7 +4,7 @@ export default function Home() {
             {/* Hero Section - Simple and Clear */}
             <div className="container" style={{ textAlign: 'center', paddingTop: '4rem', paddingBottom: '2rem' }}>
                 <div className="floating" style={{
-                    fontSize: '4.5rem',
+                    fontSize: '3rem',
                     marginBottom: '1.5rem',
                     filter: 'drop-shadow(0 0 30px rgba(102, 126, 234, 0.8))'
                 }}>
