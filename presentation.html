@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuardian AI - Hackathon Presentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 10;
+        }
+        
+        .slide.prev {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        
+        /* Slide-specific backgrounds */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .slide-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .slide-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .slide-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        .slide-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .slide-6 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+        
+        .slide-7 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+        }
+        
+        .slide-8 {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+        }
+        
+        .slide-9 {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+        
+        .slide-10 {
+            background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        
+        p, li {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        
+        .emoji {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            animation: bounceIn 1s ease-out;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 0.6s ease-out both;
+        }
+        
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-card p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            margin: 1rem;
+            animation: scaleIn 0.5s ease-out both;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 900px;
+        }
+        
+        li {
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border-left: 5px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        li::before {
+            content: "✓";
+            color: #fff;
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+        
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .slide-counter {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            z-index: 1000;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.2rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+        
+        .problem-list, .solution-list {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide slide-1 active">
+            <div class="emoji">🛡️</div>
+            <h1>CyberGuardian AI</h1>
+            <p class="subtitle">Your All-in-One AI Cybersecurity Companion</p>
+            <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Gemini AI</span>
+                <span class="tech-badge">VirusTotal API</span>
+                <span class="tech-badge">Tesseract.js</span>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Identification -->
+        <div class="slide slide-2">
+            <h2>🚨 The Problem</h2>
+            <div class="problem-list">
+                <li>Cybersecurity threats are increasing exponentially</li>
+                <li>Small businesses and individuals lack access to enterprise-grade security tools</li>
+                <li>Phishing attacks cost organizations <span class="highlight">$4.9 billion annually</span></li>
+                <li>Average person cannot identify sophisticated cyber threats</li>
+                <li>Incident response requires expensive specialized knowledge</li>
+                <li>Security awareness training is boring and ineffective</li>
+            </div>
+        </div>
+
+        <!-- Slide 3: Market Impact -->
+        <div class="slide slide-3">
+            <h2>📊 The Impact</h2>
+            <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                <div class="stat-box">
+                    <span class="stat-number">91%</span>
+                    <p>Of cyberattacks start with phishing</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">$6T</span>
+                    <p>Global cybercrime damage by 2025</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">93%</span>
+                    <p>Of breaches are preventable</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Solution Design -->
+        <div class="slide slide-4">
+            <h2>💡 Our Solution</h2>
+            <p class="subtitle">AI-Powered, Accessible, All-in-One Platform</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📚 Cyber Awareness</h3>
+                    <p>Interactive gamified learning</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎣 Phishing Detection</h3>
+                    <p>Real-time AI URL analysis</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚨 Incident Response</h3>
+                    <p>Step-by-step playbooks</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💻 Code Security</h3>
+                    <p>Vulnerability scanning</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Key Innovation -->
+        <div class="slide slide-5">
+            <div class="emoji">🔍</div>
+            <h2>Key Innovation</h2>
+            <h3>Multi-Modal AI Phishing Detection</h3>
+            <div class="solution-list">
+                <li><strong>Pattern Recognition:</strong> Advanced regex for character substitution detection</li>
+                <li><strong>VirusTotal Integration:</strong> Real-time threat intelligence from 70+ scanners</li>
+                <li><strong>AI Analysis:</strong> Gemini AI for contextual threat assessment</li>
+                <li><strong>Multi-Modal Scanning:</strong> QR codes, screenshots, and OCR analysis</li>
+            </div>
+        </div>
+
+        <!-- Slide 6: Technical Architecture -->
+        <div class="slide slide-6">
+            <h2>🏗️ Technical Architecture</h2>
+            <div class="solution-list">
+                <li><strong>Frontend:</strong> Next.js 14 with App Router for optimal performance</li>
+                <li><strong>AI Engine:</strong> Google Gemini for natural language processing</li>
+                <li><strong>Security APIs:</strong> VirusTotal for real-time threat intelligence</li>
+                <li><strong>Image Processing:</strong> Tesseract.js for OCR, jsQR for QR code scanning</li>
+                <li><strong>Deployment:</strong> Vercel for serverless scalability</li>
+            </div>
+        </div>
+
+        <!-- Slide 7: Implementation Approach -->
+        <div class="slide slide-7">
+            <h2>⚙️ Implementation Strategy</h2>
+            <div class="solution-list">
+                <li><strong>Phase 1:</strong> Core infrastructure and design system (30 min)</li>
+                <li><strong>Phase 2:</strong> Phishing detection engine - Full implementation (90 min)</li>
+                <li><strong>Phase 3:</strong> Awareness, incident response, code security (2 hours)</li>
+                <li><strong>Phase 4:</strong> Testing and refinement (15 min)</li>
+                <li><strong>Phase 5:</strong> Deployment to Vercel (10 min)</li>
+            </div>
+            <p style="margin-top: 2rem; font-weight: 600;">Total Build Time: ~6 hours | Result: Demo-ready MVP</p>
+        </div>
+
+        <!-- Slide 8: Features Deep Dive -->
+        <div class="slide slide-8">
+            <h2>✨ Feature Highlights</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎮 Gamified Learning</h3>
+                    <p>Interactive quizzes with instant feedback and scoring</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Real-time Analysis</h3>
+                    <p>Instant URL scanning with risk scoring</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📋 Smart Playbooks</h3>
+                    <p>Guided response for phishing, ransomware, and more</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔐 Code Scanning</h3>
+                    <p>Detect SQL injection, XSS, and hardcoded secrets</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Impact & Scalability -->
+        <div class="slide slide-9">
+            <h2>🚀 Impact & Scalability</h2>
+            <div class="solution-list">
+                <li><strong>Accessibility:</strong> Free tier for individuals and small businesses</li>
+                <li><strong>Scalability:</strong> Serverless architecture handles millions of users</li>
+                <li><strong>Education:</strong> Makes cybersecurity knowledge accessible to all</li>
+                <li><strong>Prevention:</strong> Reduces phishing success rate by early detection</li>
+                <li><strong>Cost Savings:</strong> Prevents costly security incidents</li>
+            </div>
+        </div>
+
+        <!-- Slide 10: Thank You -->
+        <div class="slide slide-10">
+            <div class="emoji">🎉</div>
+            <h1>Thank You!</h1>
+            <p class="subtitle">Making Cybersecurity Accessible to Everyone</p>
+            <div style="margin-top: 3rem;">
+                <h3>CyberGuardian AI</h3>
+                <p>Live Demo Available</p>
+                <p style="font-size: 1.1rem; opacity: 0.8; margin-top: 2rem;">
+                    Questions? Let's discuss how we can make the digital world safer.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-counter">
+        <span id="current">1</span> / <span id="total">10</span>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">← Previous</button>
+        <button class="btn" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].classList.add('prev');
+            
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+            });
+            
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('prev');
+            
+            document.getElementById('current').textContent = currentSlide + 1;
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+        
+        // Swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }
+    </script>
+</body>
+</html>

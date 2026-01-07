@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "difficulty": "beginner",
+        "question": "What is phishing?",
+        "options": [
+            "A type of computer virus",
+            "A scam to steal personal information via fake emails or websites",
+            "A legitimate marketing email",
+            "A programming language"
+        ],
+        "correct": 1,
+        "explanation": "Phishing is a social engineering attack where scammers impersonate legitimate organizations to trick users into revealing personal information like passwords, credit card numbers, or other sensitive data."
+    },
+    {
+        "id": 2,
+        "difficulty": "beginner",
+        "question": "What makes a strong password?",
+        "options": [
+            "Your name or birthday",
+            "12+ characters with letters, numbers, and symbols",
+            "The word 'password'",
+            "Your pet's name"
+        ],
+        "correct": 1,
+        "explanation": "Strong passwords should be at least 12 characters long and include a mix of uppercase letters, lowercase letters, numbers, and special symbols. Avoid using personal information that can be easily guessed."
+    },
+    {
+        "id": 3,
+        "difficulty": "beginner",
+        "question": "What is two-factor authentication (2FA)?",
+        "options": [
+            "Using two passwords",
+            "An extra security layer requiring a second form of verification",
+            "Logging in twice",
+            "A type of encryption"
+        ],
+        "correct": 1,
+        "explanation": "Two-factor authentication adds an extra layer of security by requiring two forms of identification: something you know (password) and something you have (phone, security key, or authentication app)."
+    },
+    {
+        "id": 4,
+        "difficulty": "intermediate",
+        "question": "Which of these is a red flag in a phishing email?",
+        "options": [
+            "Personalized greeting with your name",
+            "Urgent language demanding immediate action",
+            "Company logo and branding",
+            "Professional formatting"
+        ],
+        "correct": 1,
+        "explanation": "Phishing emails often create a sense of urgency to pressure victims into acting quickly without thinking. Phrases like 'act now', 'account suspended', or 'immediate action required' are common red flags."
+    },
+    {
+        "id": 5,
+        "difficulty": "intermediate",
+        "question": "What should you do if you clicked a phishing link?",
+        "options": [
+            "Ignore it and hope for the best",
+            "Disconnect from the internet and change your passwords",
+            "Delete your email account",
+            "Send money to fix it"
+        ],
+        "correct": 1,
+        "explanation": "If you've clicked a phishing link, immediately disconnect from the internet, run antivirus scans, change passwords on a different device, and monitor your accounts for suspicious activity. Report the incident to relevant authorities."
+    },
+    {
+        "id": 6,
+        "difficulty": "intermediate",
+        "question": "What is ransomware?",
+        "options": [
+            "Software that encrypts your files and demands payment",
+            "Free antivirus software",
+            "A type of firewall",
+            "Legal software for backups"
+        ],
+        "correct": 0,
+        "explanation": "Ransomware is malicious software that encrypts your files and demands a ransom payment (usually in cryptocurrency) to restore access. Never pay the ransom as there's no guarantee you'll get your files back."
+    },
+    {
+        "id": 7,
+        "difficulty": "advanced",
+        "question": "What is SQL injection?",
+        "options": [
+            "A medical procedure",
+            "A vulnerability where malicious SQL code is inserted into database queries",
+            "A type of encryption",
+            "A programming best practice"
+        ],
+        "correct": 1,
+        "explanation": "SQL injection is a code injection technique where attackers insert malicious SQL statements into application queries to manipulate databases, steal data, or gain unauthorized access. Use parameterized queries to prevent it."
+    },
+    {
+        "id": 8,
+        "difficulty": "advanced",
+        "question": "What is the principle of least privilege?",
+        "options": [
+            "Everyone should have full access to everything",
+            "Users should only have the minimum access needed to perform their job",
+            "Only admins should use computers",
+            "Passwords should be as short as possible"
+        ],
+        "correct": 1,
+        "explanation": "The principle of least privilege is a security concept where users are given the minimum levels of access required to perform their job functions. This limits potential damage from accidents or malicious actions."
+    },
+    {
+        "id": 9,
+        "difficulty": "advanced",
+        "question": "What is a zero-day vulnerability?",
+        "options": [
+            "A vulnerability that takes zero days to fix",
+            "A security flaw unknown to the software vendor",
+            "A vulnerability found on day zero of testing",
+            "A completely harmless bug"
+        ],
+        "correct": 1,
+        "explanation": "A zero-day vulnerability is a security flaw in software that is unknown to the vendor and has no available patch. Attackers can exploit these vulnerabilities before developers have time to create and deploy a fix."
+    },
+    {
+        "id": 10,
+        "difficulty": "advanced",
+        "question": "What does HTTPS ensure?",
+        "options": [
+            "Faster website loading",
+            "Better search engine ranking only",
+            "Encrypted communication between browser and server",
+            "The website is virus-free"
+        ],
+        "correct": 2,
+        "explanation": "HTTPS (Hypertext Transfer Protocol Secure) encrypts the communication between your browser and the web server, protecting sensitive data from being intercepted by attackers. Always look for HTTPS and the padlock icon when entering personal information."
+    }
+]

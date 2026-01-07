@@ -1,0 +1,188 @@
+[
+    {
+        "id": "phishing",
+        "name": "Clicked Phishing Link",
+        "severity": "medium",
+        "icon": "🎣",
+        "description": "You clicked on a suspicious link and may have been exposed to phishing",
+        "steps": [
+            {
+                "title": "Disconnect from network immediately",
+                "detail": "Prevent malware from communicating with command servers or spreading to other devices",
+                "timeframe": "Immediate (0-1 min)"
+            },
+            {
+                "title": "Do NOT enter any credentials",
+                "detail": "If you haven't entered passwords/payment info yet, don't do it now",
+                "timeframe": "Immediate"
+            },
+            {
+                "title": "Change passwords on a different device",
+                "detail": "Change passwords for any accounts that might have been compromised. Use a clean device",
+                "timeframe": "Within 5 minutes"
+            },
+            {
+                "title": "Run full antivirus scan",
+                "detail": "Scan for malware that may have been downloaded when you clicked the link",
+                "timeframe": "Within 30 minutes"
+            },
+            {
+                "title": "Check recent account activity",
+                "detail": "Look for unauthorized logins, transactions, or changes to your accounts",
+                "timeframe": "Within 1 hour"
+            },
+            {
+                "title": "Enable two-factor authentication",
+                "detail": "Add extra security layer to prevent unauthorized access",
+                "timeframe": "Within 24 hours"
+            },
+            {
+                "title": "Report the phishing attempt",
+                "detail": "Forward the phishing email to your email provider and relevant authorities",
+                "timeframe": "Within 24 hours"
+            },
+            {
+                "title": "Monitor accounts for 30 days",
+                "detail": "Watch for any suspicious activity in the coming weeks",
+                "timeframe": "Ongoing"
+            }
+        ]
+    },
+    {
+        "id": "ransomware",
+        "name": "Ransomware Attack",
+        "severity": "critical",
+        "icon": "🔒",
+        "description": "Your files have been encrypted and a ransom is demanded",
+        "steps": [
+            {
+                "title": "Isolate infected system IMMEDIATELY",
+                "detail": "Disconnect from network and turn off WiFi/Bluetooth to prevent spread",
+                "timeframe": "Immediate (0-1 min)"
+            },
+            {
+                "title": "Do NOT pay the ransom",
+                "detail": "Paying doesn't guarantee file recovery and funds criminal operations",
+                "timeframe": "Important decision"
+            },
+            {
+                "title": "Document everything",
+                "detail": "Take photos of ransom note, affected files, error messages. This is evidence",
+                "timeframe": "Within 15 minutes"
+            },
+            {
+                "title": "Contact law enforcement",
+                "detail": "Report to FBI Internet Crime Complaint Center (ic3.gov) or local authorities",
+                "timeframe": "Within 1 hour"
+            },
+            {
+                "title": "Identify the ransomware variant",
+                "detail": "Use ID Ransomware or similar tools to identify strain (may have free decryption)",
+                "timeframe": "Within 2 hours"
+            },
+            {
+                "title": "Check for backups",
+                "detail": "Look for recent backups on external drives or cloud storage",
+                "timeframe": "Immediately after isolation"
+            },
+            {
+                "title": "Restore from clean backup",
+                "detail": "If backups exist, wipe infected system and restore from known-good backup",
+                "timeframe": "After law enforcement contact"
+            },
+            {
+                "title": "Scan all systems",
+                "detail": "Run antivirus on all connected devices to ensure ransomware hasn't spread",
+                "timeframe": "Within 24 hours"
+            }
+        ]
+    },
+    {
+        "id": "malware",
+        "name": "Malware Infection",
+        "severity": "high",
+        "icon": "🦠",
+        "description": "Your system is infected with malicious software",
+        "steps": [
+            {
+                "title": "Disconnect from internet",
+                "detail": "Stop malware from downloading additional payloads or communicating with attackers",
+                "timeframe": "Immediate"
+            },
+            {
+                "title": "Boot into Safe Mode",
+                "detail": "Restart in Safe Mode to prevent most malware from running",
+                "timeframe": "Within 5 minutes"
+            },
+            {
+                "title": "Run malware removal tools",
+                "detail": "Use reputable antivirus/anti-malware software to scan and remove threats",
+                "timeframe": "Within 30 minutes"
+            },
+            {
+                "title": "Delete temporary files",
+                "detail": "Clear temp files, cache, and downloads where malware often hides",
+                "timeframe": "After scanning"
+            },
+            {
+                "title": "Change all passwords",
+                "detail": "Malware may have captured credentials. Change passwords on a clean device",
+                "timeframe": "After malware removal"
+            },
+            {
+                "title": "Check browser extensions",
+                "detail": "Remove any unfamiliar or suspicious browser extensions",
+                "timeframe": "After system cleaning"
+            },
+            {
+                "title": "Monitor for 7 days",
+                "detail": "Watch for unusual behavior to ensure complete removal",
+                "timeframe": "Next week"
+            }
+        ]
+    },
+    {
+        "id": "breach",
+        "name": "Data Breach / Account Compromised",
+        "severity": "high",
+        "icon": "💔",
+        "description": "Your personal data or account has been compromised",
+        "steps": [
+            {
+                "title": "Change password immediately",
+                "detail": "Use a strong, unique password you haven't used elsewhere",
+                "timeframe": "Immediate"
+            },
+            {
+                "title": "Enable two-factor authentication",
+                "detail": "Add extra security layer to the compromised account",
+                "timeframe": "Immediate"
+            },
+            {
+                "title": "Check for unauthorized activity",
+                "detail": "Review login history, transactions, and account changes",
+                "timeframe": "Within 15 minutes"
+            },
+            {
+                "title": "Revoke access to third-party apps",
+                "detail": "Remove connections to apps that may have been compromised",
+                "timeframe": "Within 30 minutes"
+            },
+            {
+                "title": "Alert contacts if needed",
+                "detail": "If your email/social media was breached, warn contacts about potential scam messages",
+                "timeframe": "Within 1 hour"
+            },
+            {
+                "title": "Monitor credit reports",
+                "detail": "If financial data was exposed, check credit reports for fraud",
+                "timeframe": "Within 24 hours"
+            },
+            {
+                "title": "Change passwords on related accounts",
+                "detail": "If you reused passwords, change them on all other accounts",
+                "timeframe": "Within 48 hours"
+            }
+        ]
+    }
+]

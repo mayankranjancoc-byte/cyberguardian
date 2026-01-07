@@ -1,0 +1,29 @@
+{
+    "urgencyKeywords": [
+        "urgent",
+        "immediately",
+        "act now",
+        "verify now",
+        "suspended",
+        "locked",
+        "limited time",
+        "expires today"
+    ],
+    "suspiciousDomains": [
+        ".tk",
+        ".ml",
+        ".ga",
+        ".cf",
+        "bit.ly",
+        "tinyurl.com",
+        "goo.gl"
+    ],
+    "dangerousActions": [
+        "click here",
+        "download",
+        "verify account",
+        "confirm identity",
+        "update payment",
+        "claim prize"
+    ]
+}

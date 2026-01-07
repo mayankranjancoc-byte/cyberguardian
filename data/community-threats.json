@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "type": "phishing",
+        "severity": "high",
+        "title": "Fake Amazon Prime Renewal",
+        "description": "Scam emails claiming Prime membership expired with malicious payment links",
+        "url": "amaz0n-renew-prime[.]tk",
+        "reports": 847,
+        "timestamp": "2026-01-05T10:30:00Z",
+        "trending": true
+    },
+    {
+        "id": 2,
+        "type": "smishing",
+        "severity": "critical",
+        "title": "Bank Security Alert SMS",
+        "description": "Text messages claiming account locked with phishing links",
+        "url": "secure-bank-verify[.]ml",
+        "reports": 1203,
+        "timestamp": "2026-01-05T09:15:00Z",
+        "trending": true
+    },
+    {
+        "id": 3,
+        "type": "malware",
+        "severity": "critical",
+        "title": "Fake Windows Defender Alert",
+        "description": "Pop-up claiming virus detected, demands payment for removal",
+        "url": "windows-support-fix[.]com",
+        "reports": 654,
+        "timestamp": "2026-01-05T08:00:00Z",
+        "trending": false
+    },
+    {
+        "id": 4,
+        "type": "phishing",
+        "severity": "high",
+        "title": "PayPal Payment Failed",
+        "description": "Emails about failed payments requiring account verification",
+        "url": "paypa1-secure[.]net",
+        "reports": 521,
+        "timestamp": "2026-01-04T16:45:00Z",
+        "trending": true
+    },
+    {
+        "id": 5,
+        "type": "scam",
+        "severity": "medium",
+        "title": "Crypto Investment Promise",
+        "description": "Promises 10x returns on cryptocurrency investment",
+        "url": "crypto-millionaire-club[.]biz",
+        "reports": 389,
+        "timestamp": "2026-01-04T14:20:00Z",
+        "trending": false
+    },
+    {
+        "id": 6,
+        "type": "phishing",
+        "severity": "high",
+        "title": "Microsoft 365 Expiration",
+        "description": "Fake emails about Office 365 subscription expiring",
+        "url": "microsoft-renew-office[.]cf",
+        "reports": 712,
+        "timestamp": "2026-01-04T11:30:00Z",
+        "trending": false
+    },
+    {
+        "id": 7,
+        "type": "smishing",
+        "severity": "high",
+        "title": "Package Delivery Failed",
+        "description": "SMS claiming package delivery failed, requests personal info",
+        "url": "usps-redelivery[.]ga",
+        "reports": 456,
+        "timestamp": "2026-01-03T18:00:00Z",
+        "trending": false
+    },
+    {
+        "id": 8,
+        "type": "phishing",
+        "severity": "medium",
+        "title": "Netflix Billing Problem",
+        "description": "Emails about billing issues requiring payment update",
+        "url": "netf1ix-billing[.]info",
+        "reports": 298,
+        "timestamp": "2026-01-03T13:15:00Z",
+        "trending": false
+    },
+    {
+        "id": 9,
+        "type": "scam",
+        "severity": "high",
+        "title": "Tech Support Scam",
+        "description": "Pop-ups claiming computer infected, calls fake support number",
+        "url": "microsoft-help-center[.]org",
+        "reports": 567,
+        "timestamp": "2026-01-02T20:30:00Z",
+        "trending": false
+    },
+    {
+        "id": 10,
+        "type": "phishing",
+        "severity": "critical",
+        "title": "IRS Tax Refund",
+        "description": "Fake IRS emails claiming tax refund pending, steals credentials",
+        "url": "irs-refund-claim[.]tk",
+        "reports": 923,
+        "timestamp": "2026-01-02T09:00:00Z",
+        "trending": true
+    }
+]
