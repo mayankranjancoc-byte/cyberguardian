@@ -252,8 +252,8 @@ textarea {
 }
 
 .feature-icon {
-  font-size: 5rem;
-  /* Very large icons */
+  font-size: 3rem;
+  /* Reduced for more professional appearance */
   filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.6));
   animation: float 3s ease-in-out infinite;
 }
