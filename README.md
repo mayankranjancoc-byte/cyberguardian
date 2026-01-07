@@ -4,196 +4,177 @@
 
 Making enterprise-grade cybersecurity accessible to everyone—from everyday users to security professionals.
 
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js) ![AI](https://img.shields.io/badge/AI-Gemini-blue?style=flat) ![Security](https://img.shields.io/badge/Security-VirusTotal-red?style=flat) ![License](https://img.shields.io/badge/License-Educational-green?style=flat)
+
 ---
 
-## 🎯 Project Overview
+## 🎯 Overview
 
-CyberGuardian AI is a comprehensive cybersecurity platform covering **4 essential security tracks** + **enhanced AI features**:
-
-1. **📚 Cyber Awareness** - Interactive quizzes and learning
-2. **🎣 Phishing Detection** - Real-time URL analysis with AI  ⭐ (Fully Implemented)
-3. **🚨 Incident Response** - Step-by-step security playbooks
-4. **💻 Code Security** - Vulnerability scanning with fix recommendations
-
-**Plus Enhanced Features:**
-- 💬 **AI Chatbot** - Conversational cybersecurity assistant powered by Gemini AI
-- 🌍 **Community Threat Feed** - Real-time threats reported by users
-- 📊 **Security Dashboard** - Track your progress and security score
+CyberGuardian AI is a comprehensive cybersecurity platform that combines artificial intelligence with real-time threat intelligence to protect users from digital threats. The platform offers multiple security modules designed to educate, detect, and respond to cybersecurity incidents.
 
 ---
 
 ## ✨ Key Features
 
-- ✅ **Real-Time Phishing Detection** - VirusTotal API integration with 70+ security vendors
-- ✅ **AI Chatbot** - Ask cybersecurity questions and get intelligent responses
-- ✅ **Interactive Learning** - 10-question cybersecurity quiz with explanations
-- ✅ **Incident Response Playbooks** - 4 detailed guides for common security incidents
-- ✅ **Code Vulnerability Scanner** - Detect SQL injection, XSS, hardcoded secrets, and more
-- ✅ **Community Threat Feed** - 10+ active threats with filtering and sorting
-- ✅ **Security Dashboard** - Personal security score with achievements and progress tracking
-- ✅ **Professional UI** - Modern, responsive design with cybersecurity theme
-- ✅ **Explainable AI** - See exactly why URLs are flagged as suspicious
-- ✅ **Zero Cost** - Completely free for all users
+### Core Security Modules
+
+🎣 **Phishing Detection**
+- Real-time URL analysis with AI-powered pattern recognition
+- Integration with VirusTotal's 70+ security vendors
+- Risk scoring and detailed threat explanations
+- Actionable security recommendations
+
+📚 **Cyber Awareness Training**
+- Interactive quiz with 10+ cybersecurity questions
+- Instant feedback and detailed explanations
+- Score tracking and achievement badges
+- Gamified learning experience
+
+🚨 **Incident Response**
+- Step-by-step playbooks for common security incidents
+- Coverage for phishing, ransomware, data breaches, and more
+- Progress tracking with checklists
+- Expert-curated response procedures
+
+💻 **Code Security Scanner**
+- Detects SQL injection, XSS, and other vulnerabilities
+- Identifies hardcoded secrets and credentials
+- Provides fix recommendations
+- Supports multiple programming languages
+
+### Enhanced Features
+
+💬 **AI Security Assistant**
+- Conversational chatbot powered by Gemini AI
+- Ask questions about cybersecurity best practices
+- Context-aware responses
+- 24/7 availability
+
+🌍 **Community Threat Feed**
+- Real-time threat intelligence from community reports
+- Filter by threat type (phishing, malware, scam)
+- Sort by recency or report volume
+- Trending threats highlighted
+
+📊 **Security Dashboard**
+- Personal security score (0-100)
+- Detailed breakdown by category
+- Achievement tracking
+- Activity history
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ installed
-- Gemini API key (get at: https://makersuite.google.com/app/apikey)
-- VirusTotal API key (get at: https://www.virustotal.com/gui/my-apikey)
+
+- Node.js 18 or higher
+- npm or yarn package manager
+- API keys (Gemini AI and VirusTotal)
 
 ### Installation
 
-1. **Install Dependencies**
-```bash
-# For PowerShell (if you have script execution issues):
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; npm install
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mayankranjancoc-byte/cyberguardian.git
+   cd cyberguardian
+   ```
 
-# Or simply:
-npm install
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-2. **Environment Variables**
+3. **Configure environment variables**
+   
+   Create a `.env.local` file in the root directory:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key_here
+   VIRUSTOTAL_API_KEY=your_virustotal_api_key_here
+   ```
+   
+   **Getting API Keys:**
+   - Gemini AI: [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey)
+   - VirusTotal: [https://www.virustotal.com/gui/my-apikey](https://www.virustotal.com/gui/my-apikey)
 
-The `.env.local` file is already configured with your API keys:
-- Gemini AI: `AIzaSyBoIiLJVEe9qaqnuAN9wqNkWqXNLQrxfLM`
-- VirusTotal: `6ed4fd9bf93f47113bf641e84a8fa28ff6acdb9f1667c7be9f95b6c2a5e4b789`
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-3. **Run Development Server**
-```bash
-npm run dev
-```
-
-4. **Open Browser**
-Navigate to: `http://localhost:3000`
+5. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-CyberFirst/
+cyberguardian/
 ├── app/
 │   ├── page.js                    # Landing page
-│   ├── layout.js                  # Root layout with navigation  
-│   ├── globals.css                # Design system
-│   ├── chat/page.js               # AI Chatbot ⭐ NEW
-│   ├── awareness/page.js          # Quiz Track
-│   ├── phishing/page.js           # Phishing Detection Track ⭐
-│   ├── incident/page.js           # Incident Response Track
-│   ├── code-security/page.js      # Code Security Track
-│   ├── community/page.js          # Community Threat Feed ⭐ NEW
-│   ├── dashboard/page.js          # Security Dashboard ⭐ NEW
+│   ├── layout.js                  # Root layout with navigation
+│   ├── globals.css                # Design system & styles
+│   ├── chat/page.js               # AI chatbot
+│   ├── awareness/page.js          # Quiz module
+│   ├── phishing/page.js           # Phishing detection
+│   ├── incident/page.js           # Incident response
+│   ├── code-security/page.js      # Code scanner
+│   ├── community/page.js          # Community feed
+│   ├── dashboard/page.js          # Security dashboard
 │   └── api/
-│       ├── chat/route.js          # Gemini AI integration ⭐ NEW
-│       └── analyze-url/route.js   # VirusTotal API integration
+│       ├── chat/route.js          # Gemini AI integration
+│       └── analyze-url/route.js   # VirusTotal integration
 ├── data/
-│   ├── quiz-questions.json        # 10 quiz questions
-│   ├── incident-playbooks.json    # 4 incident response guides
-│   ├── community-threats.json     # 10 active threats ⭐ NEW
-│   └── phishing-patterns.json     # Phishing detection patterns
-├── .env.local                     # API keys (already configured)
+│   ├── quiz-questions.json        # Quiz database
+│   ├── incident-playbooks.json    # Response guides
+│   ├── community-threats.json     # Threat database
+│   └── phishing-patterns.json     # Detection patterns
+├── .env.local                     # Environment variables (create this)
 ├── package.json                   # Dependencies
-└── README.md                      # This file
+└── README.md                      # Documentation
 ```
 
 ---
 
-## 🎬 Demo Flow (5 Minutes)
+## 🛠️ Technology Stack
 
-### 1. Landing Page (15 sec)
-- Shows all features including new AI Chatbot
-- Professional hero section
-- Clear call-to-action buttons
-
-### 2. AI Chatbot - NEW FEATURE (60 sec) 💬
-- Try asking: "How do I identify a phishing email?"
-- Shows intelligent responses from Gemini AI
-- Fallback responses work without API
-- Conversation history maintained
-
-### 3. Phishing Detection - REAL FEATURE (60 sec) ⭐
-- Try URL: `https://amaz0n-verify-account-now.com`
-- Shows:
-  - Pattern matching (character substitution)
-  - VirusTotal scan results
-  - Risk score calculation (0-100)
-  - Actionable recommendations
-
-### 4. Community Threat Feed - NEW (30 sec) 🌍
-- View 10 active threats
-- Filter by type (phishing, scam, malware)
-- Sort by reports or recency
-- Trending threats highlighted
-
-### 5. Security Dashboard - NEW (30 sec) 📊
-- Personal security score: 73/100
-- Score breakdown by category
-- Achievement badges
-- Recent activity tracking
-
-### 6. Other Tracks Tour (45 sec)
-- **Quiz**: Answer cybersecurity questions, get scored, earn badges
-- **Incident Response**: Select scenario (ransomware, phishing), follow checklist
-- **Code Security**: Paste vulnerable code, see detected issues with fixes
+- **Frontend Framework:** Next.js 14 (React)
+- **Styling:** Vanilla CSS with custom design system
+- **Backend:** Next.js API Routes (Serverless)
+- **AI/APIs:**
+  - Google Gemini AI for conversational intelligence
+  - VirusTotal API for threat intelligence
+- **Deployment:** Vercel-ready
 
 ---
 
-## 🛠️ Technical Stack
+## 🎯 Feature Status
 
-- **Frontend**: Next.js 14 (React), Vanilla CSS
-- **Backend**: Next.js API Routes (Serverless)
-- **AI/APIs**: 
-  - **Gemini AI** (conversational intelligence) ⭐ NEW
-  - **VirusTotal API** (threat intelligence)
-- **Libraries**: 
-  - tesseract.js (OCR - ready for future features)
-  - jsqr (QR scanning - ready for future features)
-- **Deployment**: Vercel-ready
+| Feature | Status | Description |
+|---------|--------|-------------|
+| Phishing URL Analyzer | ✅ Complete | Real-time analysis with VirusTotal |
+| AI Chatbot | ✅ Complete | Gemini-powered security assistant |
+| Quiz System | ✅ Complete | 10 questions with scoring |
+| Incident Response | ✅ Complete | 4 detailed playbooks |
+| Code Scanner | ✅ Complete | 6 vulnerability types |
+| Community Feed | ✅ Complete | 10+ threats with filtering |
+| Security Dashboard | ✅ Complete | Score tracking & achievements |
 
----
-
-## 🎯 Feature Implementation Status
-
-| Feature | Status | Implementation Level |
-|---------|--------|---------------------|
-| **Phishing URL Analyzer** | ✅ Complete | 100% - Real VirusTotal API |
-| **AI Chatbot** | ✅ Complete | 100% - Gemini AI + Fallbacks ⭐ |
-| **Quiz System** | ✅ Complete | 100% - 10 questions with scoring |
-| **Incident Response** | ✅ Complete | 100% - 4 playbooks |
-| **Code Scanner** | ✅ Complete | 100% - 6 vulnerability types |
-| **Community Feed** | ✅ Complete | 100% - 10 threats with filtering ⭐ |
-| **Security Dashboard** | ✅ Complete | 100% - Score tracking ⭐ |
-| **Landing Page** | ✅ Complete | 100% - Professional UI |
-| **Navigation** | ✅ Complete | 100% - 7 sections |
-
-**Overall: 100% functional for comprehensive demo - All features working!**
+**Overall: 100% functional** - All features fully implemented and tested
 
 ---
 
 ## 🏆 Innovation Highlights
 
-1. **Agentic AI Chatbot** - Intelligent Q&A with Gemini AI, context-aware responses
-2. **Real Threat Intelligence** - Live VirusTotal integration with 70+ scanners
-3. **Community-Powered Security** - Real-time threat feed from user reports
-4. **Gamification** - Security scores, achievements, and progress tracking
-5. **Explainable Security** - Users see WHY something is flagged, not just that it is
-6. **Comprehensive Coverage** - 7 interconnected security tools in one platform
-7. **Professional UX** - Cybersecurity-themed design, mobile responsive, easy to use
-
----
-
-## 📊 Build Metrics
-
-- **Build Time**: ~8 hours (including all enhanced features)
-- **Total Features**: 7 complete sections
-- **Lines of Code**: ~3,500+
-- **API Integrations**: 2 (Gemini AI + VirusTotal)
-- **Features**: 4 core tracks + 3 enhanced features
-- **UI Components**: 20+ custom components
-- **Data Files**: 4 JSON databases
+1. **Real Threat Intelligence** - Live integration with VirusTotal's 70+ security scanners
+2. **AI-Powered Assistance** - Intelligent chatbot using Google's Gemini AI
+3. **Community-Driven Security** - Real-time threat feed from user reports
+4. **Gamification** - Achievement badges and security scoring
+5. **Explainable Security** - Clear explanations of why threats are flagged
+6. **Comprehensive Coverage** - 7 interconnected security modules
+7. **Professional UX** - Modern, responsive, and accessible design
 
 ---
 
@@ -202,66 +183,61 @@ CyberFirst/
 ### Deploy to Vercel
 
 1. Install Vercel CLI:
-```bash
-npm i -g vercel
-```
+   ```bash
+   npm i -g vercel
+   ```
 
-2. Login and deploy:
-```bash
-vercel login
-vercel
-```
+2. Deploy:
+   ```bash
+   vercel login
+   vercel
+   ```
 
 3. Add environment variables in Vercel dashboard:
-- `GEMINI_API_KEY`
-- `VIRUSTOTAL_API_KEY`
+   - `GEMINI_API_KEY`
+   - `VIRUSTOTAL_API_KEY`
 
-4. Your app will be live at: `your-project.vercel.app`
-
----
-
-## 📝 Testing Checklist
-
-- [x] All 7 sections accessible from home
-- [x] AI chatbot responds to questions
-- [x] Phishing analyzer works with real URLs
-- [x] Quiz scoring and badges work
-- [x] Incident playbooks display correctly
-- [x] Code scanner detects vulnerabilities
-- [x] Community feed filters and sorts
-- [x] Dashboard shows scores and achievements
-- [x] Mobile responsive design
-- [x] No console errors
-- [x] API keys configured
-- [x] Professional UI throughout
+Your application will be live at `your-project.vercel.app`
 
 ---
 
-## 🎓 Learning Resources
+## 📖 Usage Guide
 
-### For Users
-- Chat with AI assistant for personalized cybersecurity guidance
-- Take the quiz to test your knowledge
-- Explore community threats to stay updated
-- Track your progress on the dashboard
+### Phishing Detection
+1. Navigate to the Phishing Detection page
+2. Enter a suspicious URL
+3. Click "Analyze URL"
+4. Review the risk score and detailed analysis
 
-### For Developers
-- `MASTER_PLAN.txt` - Complete build guide
-- `IMPLEMENTATION_PLAN.txt` - Detailed architecture
-- `DEMO_STRATEGY.txt` - Presentation strategy
-- `WORKFLOW_DIAGRAMS.md` - System architecture diagrams
+### AI Chatbot
+1. Open the Chat page
+2. Ask cybersecurity-related questions
+3. Receive instant, context-aware responses
+4. View conversation history
+
+### Security Quiz
+1. Go to Cyber Awareness
+2. Answer 10 cybersecurity questions
+3. Review explanations for each answer
+4. See your final score and earned badges
+
+### Incident Response
+1. Navigate to Incident Response
+2. Select your incident type
+3. Follow the step-by-step checklist
+4. Track your progress
 
 ---
 
 ## 🤝 Contributing
 
-This is a hackathon project built for CyberFirst 2026.
+This project was created for the CyberFirst Hackathon 2026. Contributions, issues, and feature requests are welcome!
 
-**Features Completed:**
-- ✅ All 4 core security tracks
-- ✅ AI Chatbot with Gemini integration
-- ✅ Community threat intelligence
-- ✅ Personal security dashboard
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
@@ -274,24 +250,21 @@ This project is created for educational and hackathon purposes.
 ## 🙏 Acknowledgments
 
 - **Google Gemini AI** - For intelligent conversational capabilities
-- **VirusTotal** - For threat intelligence API
-- **Next.js** - For the amazing framework
-- **CyberFirst Hackathon** - For the opportunity
+- **VirusTotal** - For comprehensive threat intelligence
+- **Next.js Team** - For the amazing framework
+- **CyberFirst Hackathon** - For the opportunity and inspiration
+
+---
+
+## 📧 Contact
+
+For questions, feedback, or collaboration opportunities:
+
+- GitHub: [@mayankranjancoc-byte](https://github.com/mayankranjancoc-byte)
+- Repository: [cyberguardian](https://github.com/mayankranjancoc-byte/cyberguardian)
 
 ---
 
 **Built with ❤️ for CyberFirst Hackathon 2026**
 
 *Making the internet safer, one user at a time* 🛡️
-
----
-
-## 🆕 What's New in This Version
-
-- 💬 **AI Chatbot**: Ask cybersecurity questions and get intelligent, context-aware responses
-- 🌍 **Community Threat Feed**: Browse and filter 10+ active threats reported by users
-- 📊 **Security Dashboard**: Track your security score (0-100) with detailed breakdowns
-- 🏅 **Achievement System**: Earn badges as you learn and practice
-- 📈 **Activity Tracking**: See your recent actions and progress over time
-
-**Total: 7 Complete Features** covering all bases for a comprehensive cybersecurity platform!
