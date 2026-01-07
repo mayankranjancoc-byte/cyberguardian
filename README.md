@@ -231,7 +231,7 @@ Your application will be live at `your-project.vercel.app`
 
 ## 🤝 Contributing
 
-This project was created for the CyberFirst Hackathon 2026. Contributions, issues, and feature requests are welcome!
+Contributions, issues, and feature requests are welcome! We appreciate your help in making CyberGuardian AI better.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -243,7 +243,7 @@ This project was created for the CyberFirst Hackathon 2026. Contributions, issue
 
 ## 📄 License
 
-This project is created for educational and hackathon purposes.
+This project is created for educational purposes and cybersecurity awareness.
 
 ---
 
@@ -252,7 +252,7 @@ This project is created for educational and hackathon purposes.
 - **Google Gemini AI** - For intelligent conversational capabilities
 - **VirusTotal** - For comprehensive threat intelligence
 - **Next.js Team** - For the amazing framework
-- **CyberFirst Hackathon** - For the opportunity and inspiration
+- **The Open Source Community** - For continuous inspiration and support
 
 ---
 
@@ -265,6 +265,6 @@ For questions, feedback, or collaboration opportunities:
 
 ---
 
-**Built with ❤️ for CyberFirst Hackathon 2026**
+**Built with ❤️ for a Safer Internet**
 
 *Making the internet safer, one user at a time* 🛡️
