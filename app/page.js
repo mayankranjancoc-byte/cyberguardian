@@ -1,155 +1,157 @@
 export default function Home() {
     return (
-        <div style={{ minHeight: 'calc(100vh - 200px)' }}>
-            {/* Hero Section */}
-            <div className="container" style={{ textAlign: 'center', paddingTop: '4rem', paddingBottom: '3rem' }}>
-                <div style={{
-                    fontSize: '4rem',
-                    marginBottom: '1rem',
-                    animation: 'fadeIn 0.8s ease'
-                }}>
+    \u003cdiv style = {{ minHeight: 'calc(100vh - 200px)' }
+} \u003e
+{/* Hero Section - Simple and Clear */ }
+\u003cdiv className = "container" style = {{ textAlign: 'center', paddingTop: '4rem', paddingBottom: '2rem' }}\u003e
+\u003cdiv className = "floating" style = {{
+    fontSize: '6rem',
+        marginBottom: '1.5rem',
+            filter: 'drop-shadow(0 0 30px rgba(102, 126, 234, 0.8))'
+}}\u003e
                     🛡️
-                </div>
-                <h1 style={{
-                    fontSize: '3.5rem',
-                    background: 'linear-gradient(135deg, #4285f4 0%, #ea4335 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    marginBottom: '1rem'
-                }}>
+\u003c / div\u003e
+\u003ch1 className = "gradient-text" style = {{
+    fontSize: '4rem',
+        marginBottom: '1.5rem'
+}}\u003e
                     CyberGuardian AI
-                </h1>
-                <p style={{
-                    fontSize: '1.5rem',
-                    color: '#b3b3b3',
-                    maxWidth: '700px',
-                    margin: '0 auto 2rem auto'
-                }}>
-                    Your All-in-One AI-Powered Cybersecurity Companion
-                </p>
+\u003c / h1\u003e
+\u003cp style = {{
+    fontSize: '1.5rem',
+        color: 'var(--text-secondary)',
+            maxWidth: '700px',
+                margin: '0 auto',
+                    lineHeight: '1.6'
+}}\u003e
+                    Stay safe online with easy, powerful tools
+\u003c / p\u003e
+\u003c / div\u003e
 
-                <div style={{
-                    display: 'flex',
-                    gap: '1rem',
-                    justifyContent: 'center',
-                    flexWrap: 'wrap',
-                    marginTop: '2rem'
-                }}>
-                    <a href="/chat" style={{ textDecoration: 'none' }}>
-                        <button className="btn btn-success" style={{ fontSize: '1.1rem' }}>
-                            💬 Chat with AI
-                        </button>
-                    </a>
-                    <a href="/phishing" style={{ textDecoration: 'none' }}>
-                        <button className="btn btn-danger" style={{ fontSize: '1.1rem' }}>
-                            🎣 Try Phishing Detection
-                        </button>
-                    </a>
-                    <a href="/awareness" style={{ textDecoration: 'none' }}>
-                        <button className="btn" style={{ fontSize: '1.1rem' }}>
-                            📚 Take Security Quiz
-                        </button>
-                    </a>
-                </div>
-            </div>
+{/* Main Feature Cards - 4 Large, Simple Options */ }
+\u003cdiv className = "container"\u003e
+\u003ch2 style = {{
+    textAlign: 'center',
+        marginBottom: '3rem',
+            fontSize: '2rem',
+                fontWeight: '600'
+}}\u003e
+                    What would you like to do?
+\u003c / h2\u003e
 
-            {/* Features Grid */}
-            <div className="container">
-                <h2 style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                    Protect Yourself Across 4 Security Tracks
-                </h2>
+\u003cdiv className = "grid-2"\u003e
+{/* Card 1: Learn Safety */ }
+\u003ca href = "/awareness" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "feature-card fade-in-up" style = {{ animationDelay: '0.1s' }}\u003e
+\u003cdiv className = "feature-icon"\u003e🧠\u003c / div\u003e
+\u003ch3 className = "feature-title"\u003eLe arn Safety\u003c / h3\u003e
+\u003cp className = "feature-description"\u003e
+                                Take a quick quiz to learn how to stay safe
+\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
 
-                <div className="grid">
-                    <a href="/awareness" style={{ textDecoration: 'none' }}>
-                        <div className="card card-clickable" style={{ height: '100%' }}>
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📚</div>
-                            <h3>Cyber Awareness</h3>
-                            <p>Learn cybersecurity through interactive quizzes, FAQs, and daily security tips. Build your knowledge progressively.</p>
-                            <div className="badge badge-info">Track 1</div>
-                        </div>
-                    </a>
+{/* Card 2: Check Link or Message */ }
+\u003ca href = "/phishing" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "feature-card fade-in-up" style = {{ animationDelay: '0.2s' }}\u003e
+\u003cdiv className = "feature-icon"\u003e🎣\u003c / div\u003e
+\u003ch3 className = "feature-title"\u003eCheck Link or Message\u003c / h3\u003e
+\u003cp className = "feature-description"\u003e
+                                Not sure if a link is safe ? Check it here
+\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
 
-                    <a href="/phishing" style={{ textDecoration: 'none' }}>
-                        <div className="card card-clickable" style={{
-                            height: '100%',
-                            borderTop: '4px solid var(--danger)'
-                        }}>
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🎣</div>
-                            <h3>Phishing Detection</h3>
-                            <p>Analyze suspicious URLs and emails in real-time using AI and threat intelligence. Protect yourself from scams.</p>
-                            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                <span className="badge badge-critical">Track 2</span>
-                                <span className="badge badge-info">AI-Powered</span>
-                            </div>
-                        </div>
-                    </a>
+{/* Card 3: Incident Help */ }
+\u003ca href = "/incident" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "feature-card fade-in-up" style = {{ animationDelay: '0.3s' }}\u003e
+\u003cdiv className = "feature-icon"\u003e🚨\u003c / div\u003e
+\u003ch3 className = "feature-title"\u003eIncident Help\u003c / h3\u003e
+\u003cp className = "feature-description"\u003e
+                                Something went wrong ? Get step - by - step help
+\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
 
-                    <a href="/incident" style={{ textDecoration: 'none' }}>
-                        <div className="card card-clickable" style={{ height: '100%' }}>
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚨</div>
-                            <h3>Incident Response</h3>
-                            <p>Step-by-step playbooks guide you through security incidents like phishing, ransomware, and malware attacks.</p>
-                            <div className="badge badge-info">Track 3</div>
-                        </div>
-                    </a>
+{/* Card 4: Check Code */ }
+\u003ca href = "/code-security" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "feature-card fade-in-up" style = {{ animationDelay: '0.4s' }}\u003e
+\u003cdiv className = "feature-icon"\u003e💻\u003c / div\u003e
+\u003ch3 className = "feature-title"\u003eCheck Code\u003c / h3\u003e
+\u003cp className = "feature-description"\u003e
+Developers: scan your code for security issues
+\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
+\u003c / div\u003e
+\u003c / div\u003e
 
-                    <a href="/code-security" style={{ textDecoration: 'none' }}>
-                        <div className="card card-clickable" style={{ height: '100%' }}>
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>💻</div>
-                            <h3>Code Security</h3>
-                            <p>Scan your code for vulnerabilities like SQL injection, XSS, and hardcoded secrets. Get instant fix recommendations.</p>
-                            <div className="badge badge-info">Track 4</div>
-                        </div>
-                    </a>
+{/* Additional Features - Simple List */ }
+\u003cdiv className = "container" style = {{ marginTop: '4rem' }}\u003e
+\u003ch3 style = {{
+    textAlign: 'center',
+        marginBottom: '2rem',
+            color: 'var(--text-secondary)',
+                fontWeight: '500'
+}}\u003e
+                    More Tools Available:
+\u003c / h3\u003e
 
-                    <a href="/scanner" style={{ textDecoration: 'none' }}>
-                        <div className="card card-clickable" style={{
-                            height: '100%',
-                            borderTop: '4px solid var(--success)'
-                        }}>
-                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🔍</div>
-                            <h3>Multi-Modal Scanner</h3>
-                            <p>Scan QR codes and extract text from screenshots to detect phishing attempts in images and messages.</p>
-                            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                <span className="badge badge-low">QR Scanner</span>
-                                <span className="badge badge-info">OCR Analysis</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+\u003cdiv className = "grid"\u003e
+\u003ca href = "/chat" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "card card-clickable"\u003e
+\u003cdiv style = {{ fontSize: '2.5rem', marginBottom: '1rem' }}\u003e💬\u003c / div\u003e
+\u003ch3\u003eAI Assistant\u003c / h3\u003e
+\u003cp\u003eAsk questions and get instant security advice\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
 
-            {/* Stats Section */}
-            <div className="container" style={{ marginTop: '4rem' }}>
-                <div className="grid" style={{ textAlign: 'center' }}>
-                    <div className="card">
-                        <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '0.5rem' }}>4</h2>
-                        <p style={{ fontSize: '1.1rem', margin: 0 }}>Security Tracks</p>
-                    </div>
-                    <div className="card">
-                        <h2 style={{ fontSize: '3rem', color: 'var(--success)', marginBottom: '0.5rem' }}>8+</h2>
-                        <p style={{ fontSize: '1.1rem', margin: 0 }}>Innovative Features</p>
-                    </div>
-                    <div className="card">
-                        <h2 style={{ fontSize: '3rem', color: 'var(--warning)', marginBottom: '0.5rem' }}>FREE</h2>
-                        <p style={{ fontSize: '1.1rem', margin: 0 }}>For Everyone</p>
-                    </div>
-                </div>
-            </div>
+\u003ca href = "/scanner" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "card card-clickable"\u003e
+\u003cdiv style = {{ fontSize: '2.5rem', marginBottom: '1rem' }}\u003e🔍\u003c / div\u003e
+\u003ch3\u003eScan QR Codes\u003c / h3\u003e
+\u003cp\u003eCheck QR codes and images for hidden threats\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
 
-            {/* Mission Statement */}
-            <div className="container" style={{ marginTop: '4rem', textAlign: 'center' }}>
-                <div className="card" style={{
-                    background: 'linear-gradient(135deg, rgba(66, 133, 244, 0.1) 0%, rgba(234, 67, 53, 0.1) 100%)',
-                    borderColor: 'var(--primary)'
-                }}>
-                    <h2 style={{ marginBottom: '1rem' }}>Our Mission</h2>
-                    <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto', color: 'var(--text-primary)' }}>
-                        Making enterprise-grade cybersecurity accessible to all 4+ billion internet users.
-                        From grandparents checking suspicious emails to developers writing secure code—everyone deserves protection.
-                    </p>
-                </div>
-            </div>
-        </div>
+\u003ca href = "/community" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "card card-clickable"\u003e
+\u003cdiv style = {{ fontSize: '2.5rem', marginBottom: '1rem' }}\u003e🌍\u003c / div\u003e
+\u003ch3\u003eThreat Alerts\u003c / h3\u003e
+\u003cp\u003eSee what scams are happening right now\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
+
+\u003ca href = "/dashboard" style = {{ textDecoration: 'none' }}\u003e
+\u003cdiv className = "card card-clickable"\u003e
+\u003cdiv style = {{ fontSize: '2.5rem', marginBottom: '1rem' }}\u003e📊\u003c / div\u003e
+\u003ch3\u003eYour Progress\u003c / h3\u003e
+\u003cp\u003eTrack your security learning and achievements\u003c / p\u003e
+\u003c / div\u003e
+\u003c / a\u003e
+\u003c / div\u003e
+\u003c / div\u003e
+
+{/* Why It's Free - Simple Message */ }
+\u003cdiv className = "container" style = {{ marginTop: '5rem', marginBottom: '3rem', textAlign: 'center' }}\u003e
+\u003cdiv className = "card" style = {{
+    background: 'var(--glass-bg)',
+        backdropFilter: 'blur(15px)',
+            borderColor: 'rgba(102, 126, 234, 0.3)'
+}}\u003e
+\u003ch2 style = {{ marginBottom: '1.5rem', fontSize: '2.25rem' }}\u003e✨ Free for Everyone ✨\u003c / h2\u003e
+\u003cp style = {{
+    fontSize: '1.25rem',
+        maxWidth: '650px',
+            margin: '0 auto',
+                color: 'var(--text-primary)',
+                    lineHeight: '1.7'
+}}\u003e
+                        Everyone deserves to be safe online.No signup required, no credit card needed.
+                        Just click and start protecting yourself today.
+\u003c / p\u003e
+\u003c / div\u003e
+\u003c / div\u003e
+\u003c / div\u003e
     )
 }
