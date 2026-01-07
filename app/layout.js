@@ -9,16 +9,14 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
-                {/* Navigation - Glassmorphic */}
                 <nav style={{
-                    background: 'rgba(26, 26, 46, 0.8)',
-                    backdropFilter: 'blur(15px)',
-                    WebkitBackdropFilter: 'blur(15px)',
-                    padding: '1.25rem 0',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: '#1a1a2e',
+                    padding: '1rem 0',
+                    borderBottom: '1px solid #2a2a3e',
                     position: 'sticky',
                     top: 0,
-                    zIndex: 1000
+                    zIndex: 1000,
+                    backdropFilter: 'blur(10px)'
                 }}>
                     <div style={{
                         maxWidth: '1200px',
@@ -30,93 +28,111 @@ export default function RootLayout({ children }) {
                         flexWrap: 'wrap'
                     }}>
                         <a href="/" style={{
-                            fontSize: '1.5rem',
+                            fontSize: '1.25rem',
                             fontWeight: '700',
                             color: '#fff',
                             textDecoration: 'none',
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '0.75rem'
+                            gap: '0.5rem'
                         }}>
-                            <span style={{ fontSize: '2rem' }}>🛡️</span>
+                            <span style={{ fontSize: '1.5rem' }}>🛡️</span>
                             CyberGuardian AI
                         </a>
 
                         <div style={{
                             display: 'flex',
-                            gap: '2rem',
+                            gap: '1.5rem',
                             flex: 1,
                             flexWrap: 'wrap'
                         }}>
                             <a href="/chat" style={{
-                                color: 'var(--text-secondary)',
+                                color: '#b3b3b3',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s',
+                                transition: 'color 0.3s',
                                 fontWeight: '500',
-                                fontSize: '1.125rem',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                padding: '0.5rem 0.75rem',
-                                borderRadius: '8px'
+                                gap: '0.4rem'
                             }}>
                                 💬 Chat
                             </a>
                             <a href="/awareness" style={{
-                                color: 'var(--text-secondary)',
+                                color: '#b3b3b3',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s',
+                                transition: 'color 0.3s',
                                 fontWeight: '500',
-                                fontSize: '1.125rem',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                padding: '0.5rem 0.75rem',
-                                borderRadius: '8px'
+                                gap: '0.4rem'
                             }}>
-                                🧠 Learn
+                                📚 Awareness
                             </a>
                             <a href="/phishing" style={{
-                                color: 'var(--text-secondary)',
+                                color: '#b3b3b3',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s',
+                                transition: 'color 0.3s',
                                 fontWeight: '500',
-                                fontSize: '1.125rem',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                padding: '0.5rem 0.75rem',
-                                borderRadius: '8px'
+                                gap: '0.4rem'
                             }}>
-                                🎣 Check Link
+                                🎣 Phishing
                             </a>
                             <a href="/incident" style={{
-                                color: 'var(--text-secondary)',
+                                color: '#b3b3b3',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s',
+                                transition: 'color 0.3s',
                                 fontWeight: '500',
-                                fontSize: '1.125rem',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                padding: '0.5rem 0.75rem',
-                                borderRadius: '8px'
+                                gap: '0.4rem'
                             }}>
-                                🚨 Help
+                                🚨 Incident
                             </a>
                             <a href="/code-security" style={{
-                                color: 'var(--text-secondary)',
+                                color: '#b3b3b3',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s',
+                                transition: 'color 0.3s',
                                 fontWeight: '500',
-                                fontSize: '1.125rem',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                padding: '0.5rem 0.75rem',
-                                borderRadius: '8px'
+                                gap: '0.4rem'
                             }}>
                                 💻 Code
+                            </a>
+                            <a href="/scanner" style={{
+                                color: '#b3b3b3',
+                                textDecoration: 'none',
+                                transition: 'color 0.3s',
+                                fontWeight: '500',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem'
+                            }}>
+                                🔍 Scanner
+                            </a>
+                            <a href="/community" style={{
+                                color: '#b3b3b3',
+                                textDecoration: 'none',
+                                transition: 'color 0.3s',
+                                fontWeight: '500',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem'
+                            }}>
+                                🌍 Community
+                            </a>
+                            <a href="/dashboard" style={{
+                                color: '#b3b3b3',
+                                textDecoration: 'none',
+                                transition: 'color 0.3s',
+                                fontWeight: '500',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem'
+                            }}>
+                                📊 Dashboard
                             </a>
                         </div>
                     </div>
@@ -124,47 +140,18 @@ export default function RootLayout({ children }) {
 
                 <main>{children}</main>
 
-                {/* Floating AI Assistant - Always Visible */}
-                <a href="/chat" aria-label="Get Help from AI Assistant" style={{
-                    position: 'fixed',
-                    bottom: '2rem',
-                    right: '2rem',
-                    width: '72px',
-                    height: '72px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontSize: '2.5rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textDecoration: 'none',
-                    zIndex: 999,
-                    boxShadow: '0 8px 32px rgba(102, 126, 234, 0.6)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    animation: 'glow 3s ease-in-out infinite'
-                }}>
-                    💬
-                </a>
-
-                {/* Footer - Glassmorphic */}
                 <footer style={{
-                    background: 'rgba(26, 26, 46, 0.8)',
-                    backdropFilter: 'blur(15px)',
-                    WebkitBackdropFilter: 'blur(15px)',
-                    padding: '2.5rem 0',
-                    marginTop: '6rem',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: '#1a1a2e',
+                    padding: '2rem 0',
+                    marginTop: '4rem',
+                    borderTop: '1px solid #2a2a3e',
                     textAlign: 'center',
-                    color: 'var(--text-secondary)'
+                    color: '#b3b3b3'
                 }}>
                     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-                        <p style={{ fontSize: '1.125rem', marginBottom: '0.75rem' }}>
-                            © 2026 CyberGuardian AI
-                        </p>
-                        <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>
-                            Making Cybersecurity Accessible to Everyone
+                        <p>© 2026 CyberGuardian AI - Making Cybersecurity Accessible to Everyone</p>
+                        <p style={{ fontSize: '0.875rem', marginTop: '0.5rem' }}>
+                            Built with ❤️ for CyberFirst Hackathon
                         </p>
                     </div>
                 </footer>
