@@ -76,7 +76,7 @@ export default function ChatPage() {
     }
 
     return (
-        <div className="container" style={{ maxWidth: '1100px', height: 'calc(100vh - 150px)', display: 'flex', flexDirection: 'column' }}>
+        <div className="container" style={{ maxWidth: '1400px', height: 'calc(100vh - 150px)', display: 'flex', flexDirection: 'column' }}>
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '1.5rem', paddingTop: '1.5rem' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>💬</div>
@@ -126,7 +126,7 @@ export default function ChatPage() {
                         }}
                     >
                         <div style={{
-                            maxWidth: '85%', /* Increased from 80% */
+                            maxWidth: '90%', /* Increased to 90% for wider messages */
                             background: msg.role === 'user' ? 'var(--primary)' : msg.error ? 'rgba(234, 67, 53, 0.1)' : 'var(--bg-card)',
                             color: msg.role === 'user' ? 'white' : 'var(--text-primary)',
                             padding: '1.25rem 1.5rem', /* Increased padding */
