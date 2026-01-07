@@ -76,7 +76,7 @@ export default function ChatPage() {
     }
 
     return (
-        <div className="container" style={{ maxWidth: '900px', height: 'calc(100vh - 150px)', display: 'flex', flexDirection: 'column' }}>
+        <div className="container" style={{ maxWidth: '1100px', height: 'calc(100vh - 150px)', display: 'flex', flexDirection: 'column' }}>
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '1.5rem', paddingTop: '1.5rem' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>💬</div>
@@ -114,7 +114,7 @@ export default function ChatPage() {
                 marginBottom: '1.5rem',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1rem'
+                gap: '1.5rem' /* Increased from 1rem */
             }}>
                 {messages.map((msg, index) => (
                     <div
@@ -126,17 +126,18 @@ export default function ChatPage() {
                         }}
                     >
                         <div style={{
-                            maxWidth: '80%',
+                            maxWidth: '85%', /* Increased from 80% */
                             background: msg.role === 'user' ? 'var(--primary)' : msg.error ? 'rgba(234, 67, 53, 0.1)' : 'var(--bg-card)',
                             color: msg.role === 'user' ? 'white' : 'var(--text-primary)',
-                            padding: '1rem 1.25rem',
+                            padding: '1.25rem 1.5rem', /* Increased padding */
                             borderRadius: '16px',
                             borderTopRightRadius: msg.role === 'user' ? '4px' : '16px',
                             borderTopLeftRadius: msg.role === 'assistant' ? '4px' : '16px',
                             border: msg.error ? '1px solid var(--danger)' : '1px solid var(--border)',
                             boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                             whiteSpace: 'pre-wrap',
-                            lineHeight: '1.6'
+                            fontSize: '1.05rem', /* Increased font size */
+                            lineHeight: '1.7' /* Increased line height */
                         }}>
                             {msg.role === 'assistant' && (
                                 <div style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>🤖</div>
