@@ -10,13 +10,14 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                 <nav style={{
-                    background: '#1a1a2e',
+                    background: 'rgba(26, 26, 46, 0.8)',
+                    backdropFilter: 'blur(15px)',
+                    WebkitBackdropFilter: 'blur(15px)',
                     padding: '1rem 0',
-                    borderBottom: '1px solid #2a2a3e',
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                     position: 'sticky',
                     top: 0,
-                    zIndex: 1000,
-                    backdropFilter: 'blur(10px)'
+                    zIndex: 1000
                 }}>
                     <div style={{
                         maxWidth: '1200px',
@@ -141,10 +142,12 @@ export default function RootLayout({ children }) {
                 <main>{children}</main>
 
                 <footer style={{
-                    background: '#1a1a2e',
+                    background: 'rgba(26, 26, 46, 0.8)',
+                    backdropFilter: 'blur(15px)',
+                    WebkitBackdropFilter: 'blur(15px)',
                     padding: '2rem 0',
                     marginTop: '4rem',
-                    borderTop: '1px solid #2a2a3e',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
                     textAlign: 'center',
                     color: '#b3b3b3'
                 }}>

@@ -128,16 +128,24 @@ p {
   box-shadow: 0 4px 12px rgba(52, 168, 83, 0.4);
 }
 
-/* Cards */
+/* Cards - Glassmorphic */
 .card {
-  background: var(--bg-card);
+  background: rgba(26, 26, 46, 0.7);
+  /* Semi-transparent */
+  backdrop-filter: blur(10px);
+  /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari support */
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   margin: 1rem 0;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Subtle glass border */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* Depth shadow */
 }
 
 .card::before {
@@ -153,10 +161,11 @@ p {
 }
 
 .card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--primary);
+  background: rgba(37, 37, 56, 0.8);
+  /* Slightly less transparent on hover */
+  border-color: rgba(66, 133, 244, 0.3);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(66, 133, 244, 0.2);
 }
 
 .card:hover::before {
@@ -167,16 +176,20 @@ p {
   cursor: pointer;
 }
 
-/* Inputs */
+/* Inputs - Glassmorphic */
 input[type="text"],
 input[type="url"],
 textarea {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
-  border-radius: 8px;
-  border: 2px solid var(--border);
-  background: var(--bg-card);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(26, 26, 46, 0.6);
+  /* Semi-transparent */
+  backdrop-filter: blur(10px);
+  /* Frosted glass */
+  -webkit-backdrop-filter: blur(10px);
   color: var(--text-primary);
   transition: all 0.3s ease;
   font-family: inherit;
@@ -185,7 +198,8 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: rgba(66, 133, 244, 0.5);
+  background: rgba(26, 26, 46, 0.8);
   box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
 }
 
