@@ -114,7 +114,8 @@ export default function ChatPage() {
                 marginBottom: '1.5rem',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.5rem' /* Increased from 1rem */
+                gap: '1.5rem', /* Increased from 1rem */
+                minHeight: '500px' /* CRITICAL FIX: was only 44px! */
             }}>
                 {messages.map((msg, index) => (
                     <div
