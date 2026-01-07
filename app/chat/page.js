@@ -71,7 +71,7 @@ export default function ChatPage() {
         "What is ransomware?"
     ];
 
-    function useQuickPrompt(prompt) {
+    function handleQuickPrompt(prompt) {
         setInput(prompt);
     }
 
@@ -96,7 +96,7 @@ export default function ChatPage() {
                         {quickPrompts.map((prompt, i) => (
                             <button
                                 key={i}
-                                onClick={() => useQuickPrompt(prompt)}
+                                onClick={() => handleQuickPrompt(prompt)}
                                 className="badge badge-info"
                                 style={{ cursor: 'pointer', padding: '0.5rem 0.75rem', fontSize: '0.875rem' }}
                             >
