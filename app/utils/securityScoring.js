@@ -57,48 +57,48 @@ export function generateRecommendation(score, vtResult, deepAnalysis) {
     if (score >= 80) {
         return {
             level: 'safe',
-            title: '✅ Safe to Visit',
-            message: 'This site appears to be safe based on our comprehensive analysis.',
+            title: '✅ This Link Looks Safe',
+            message: 'Based on our checks, this website appears to be legitimate and safe to visit.',
             actions: [
-                'Site has a clean security record',
-                'Domain has been registered for a reasonable time',
-                'No community reports of suspicious activity',
-                'Passed all threat intelligence checks'
+                'No security warnings found',
+                'Website has been around for a while (not brand new)',
+                'No one has reported this as a scam',
+                'Passed all our safety checks'
             ],
-            advice: 'You can proceed with normal caution. Always verify HTTPS and look for trust indicators.'
+            advice: 'You can visit this link, but still double-check the website address and look for the lock icon 🔒 in your browser.'
         };
     }
 
     if (score >= 50) {
         return {
             level: 'caution',
-            title: '⚠️ Exercise Caution',
-            message: 'This site has some concerning indicators. Proceed carefully.',
+            title: '⚠️ Be Careful With This Link',
+            message: 'This website has some warning signs. If you visit, be very careful.',
             actions: [
-                'Avoid entering sensitive personal information',
-                'Never share passwords or financial details',
-                'Check URL carefully for typos or misspellings',
-                'Verify you\'re on HTTPS (lock icon in browser)',
-                'Read reviews and user feedback before interacting',
-                'Consider using alternative, well-known sites'
+                'Don\'t enter personal info like your name, address, or phone number',
+                'Never type in passwords or credit card numbers',
+                'Check the web address carefully - look for spelling mistakes',
+                'Make sure the website shows a lock icon 🔒 in your browser',
+                'Search online to see what others say about this website',
+                'If possible, use a well-known website instead'
             ],
-            advice: 'Proceed with extreme caution. Limit what you share and avoid making purchases until you verify legitimacy.'
+            advice: 'Think twice before visiting. Don\'t buy anything or share personal information until you\'re 100% sure it\'s real.'
         };
     }
 
     return {
         level: 'danger',
-        title: '🔴 High Risk - Avoid This Site',
-        message: 'WARNING: This site shows multiple serious red flags indicating it may be malicious.',
+        title: '🔴 DANGER - This Link Is NOT Safe!',
+        message: 'WARNING: This website is very likely a SCAM or FAKE. Do not click or visit!',
         actions: [
-            '❌ Do NOT enter any personal information',
-            '❌ Do NOT make any payments or financial transactions',
-            '❌ Do NOT download any files',
-            '❌ Close this site immediately',
-            '✅ Report this link if you received it unexpectedly',
-            '✅ Scan your device if you visited this site'
+            '❌ DO NOT enter your name, email, phone, or address',
+            '❌ DO NOT pay for anything or enter credit card numbers',
+            '❌ DO NOT download anything from this website',
+            '❌ Close this right now and don\'t visit',
+            '✅ If someone sent you this link, report it as spam',
+            '✅ If you already visited, run a virus scan on your device'
         ],
-        advice: 'We strongly recommend avoiding this site entirely. If you received a link to this site, it may be a phishing attempt.'
+        advice: 'Stay away from this website completely. Someone may be trying to steal your money or personal information.'
     };
 }
 
@@ -122,11 +122,11 @@ export function getScoreBreakdown(vtResult, deepAnalysis) {
         vtStatus = 'Malicious';
     }
     breakdown.push({
-        name: 'VirusTotal Scan',
+        name: 'Security Scan',
         score: vtScore,
         maxScore: 40,
         status: vtStatus,
-        details: `${vtResult.malicious} malicious, ${vtResult.suspicious} suspicious`,
+        details: `${vtResult.malicious} found it dangerous, ${vtResult.suspicious} found it suspicious`,
         icon: '🛡️'
     });
 
@@ -147,11 +147,11 @@ export function getScoreBreakdown(vtResult, deepAnalysis) {
         dnsStatus = 'Flagged';
     }
     breakdown.push({
-        name: 'DNS Reputation',
+        name: 'Website Reputation',
         score: dnsScore,
         maxScore: 25,
         status: dnsStatus,
-        details: `${deepAnalysis.dns.reportCount} report(s)`,
+        details: `${deepAnalysis.dns.reportCount} warning(s) from others`,
         icon: '🌐'
     });
 
@@ -173,11 +173,11 @@ export function getScoreBreakdown(vtResult, deepAnalysis) {
         ageStatus = 'Very New';
     }
     breakdown.push({
-        name: 'Domain Age',
+        name: 'Website Age',
         score: ageScore,
         maxScore: 20,
         status: ageStatus,
-        details: `${deepAnalysis.domain.age.years}y ${deepAnalysis.domain.age.months}m old`,
+        details: `${deepAnalysis.domain.age.years} years ${deepAnalysis.domain.age.months} months old`,
         icon: '📅'
     });
 
@@ -198,11 +198,11 @@ export function getScoreBreakdown(vtResult, deepAnalysis) {
         communityStatus = 'Many Reports';
     }
     breakdown.push({
-        name: 'Community Reports',
+        name: 'User Reports',
         score: communityScore,
         maxScore: 15,
         status: communityStatus,
-        details: `${deepAnalysis.community.totalReports} report(s)`,
+        details: `${deepAnalysis.community.totalReports} people flagged this`,
         icon: '👥'
     });
 

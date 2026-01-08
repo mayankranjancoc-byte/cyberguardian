@@ -38,24 +38,64 @@ export async function POST(request) {
 
         // Step 2: VirusTotal Check
         let vtScore = 0;
+        let vtSuspicious = 0;
         let vtError = null;
 
         try {
-            const vtResponse = await fetch(
-                `https://www.virustotal.com/api/v3/urls`,
+            // Create URL identifier for VirusTotal
+            const urlIdentifier = Buffer.from(url).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+            // Check if URL is already analyzed
+            const checkResponse = await fetch(
+                `https://www.virustotal.com/api/v3/urls/${urlIdentifier}`,
                 {
-                    method: 'POST',
                     headers: {
-                        'x-apikey': process.env.VIRUSTOTAL_API_KEY,
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: `url=${encodeURIComponent(url)}`
+                        'x-apikey': process.env.VIRUSTOTAL_API_KEY
+                    }
                 }
             );
 
-            if (vtResponse.ok) {
-                const vtData = await vtResponse.json();
-                vtScore = vtData?.data?.attributes?.last_analysis_stats?.malicious || 0;
+            if (checkResponse.ok) {
+                const checkData = await checkResponse.json();
+                const stats = checkData.data?.attributes?.last_analysis_stats;
+                if (stats) {
+                    vtScore = stats.malicious || 0;
+                    vtSuspicious = stats.suspicious || 0;
+                }
+            } else if (checkResponse.status === 404) {
+                // URL not in database, submit for analysis
+                const submitResponse = await fetch(
+                    `https://www.virustotal.com/api/v3/urls`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'x-apikey': process.env.VIRUSTOTAL_API_KEY,
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `url=${encodeURIComponent(url)}`
+                    }
+                );
+
+                if (submitResponse.ok) {
+                    // Wait a bit and try to get results
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    const retryResponse = await fetch(
+                        `https://www.virustotal.com/api/v3/urls/${urlIdentifier}`,
+                        {
+                            headers: {
+                                'x-apikey': process.env.VIRUSTOTAL_API_KEY
+                            }
+                        }
+                    );
+                    if (retryResponse.ok) {
+                        const retryData = await retryResponse.json();
+                        const stats = retryData.data?.attributes?.last_analysis_stats;
+                        if (stats) {
+                            vtScore = stats.malicious || 0;
+                            vtSuspicious = stats.suspicious || 0;
+                        }
+                    }
+                }
             }
         } catch (e) {
             vtError = 'VirusTotal check unavailable';
@@ -69,7 +109,8 @@ export async function POST(request) {
         risk += patterns.length * 20;
 
         // VirusTotal-based risk
-        risk += vtScore * 5;
+        risk += vtScore * 10; // Each malicious detection adds 10 points
+        risk += vtSuspicious * 5; // Each suspicious detection adds 5 points
 
         // Cap at 100
         risk = Math.min(risk, 100);
@@ -93,6 +134,7 @@ export async function POST(request) {
             url,
             patterns,
             virusTotalScore: vtScore,
+            virusTotalSuspicious: vtSuspicious,
             virusTotalError: vtError,
             riskScore: risk,
             riskLevel,

@@ -1,6 +1,7 @@
 import './globals.css'
 import { LanguageProvider } from './context/LanguageContext'
 import NavigationAndFooter from './NavigationAndFooter'
+import FloatingChatButton from './components/FloatingChatButton'
 
 export const metadata = {
     title: 'CyberRaksha - Your Cybersecurity Companion',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
                     <NavigationAndFooter>
                         {children}
                     </NavigationAndFooter>
+                    <FloatingChatButton />
                 </LanguageProvider>
             </body>
         </html>

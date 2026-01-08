@@ -19,9 +19,9 @@ export default function PhishingModal({ isOpen, onClose, analysisData }) {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: 'rgba(0, 0, 0, 0.85)',
-                    backdropFilter: 'blur(8px)',
-                    WebkitBackdropFilter: 'blur(8px)',
+                    background: 'rgba(0, 0, 0, 0.5)',
+                    backdropFilter: 'blur(4px)',
+                    WebkitBackdropFilter: 'blur(4px)',
                     zIndex: 9999,
                     display: 'flex',
                     alignItems: 'center',
@@ -34,18 +34,17 @@ export default function PhishingModal({ isOpen, onClose, analysisData }) {
                 {/* Modal Content */}
                 <div
                     style={{
-                        background: 'rgba(26, 26, 46, 0.98)',
-                        backdropFilter: 'blur(20px)',
-                        WebkitBackdropFilter: 'blur(20px)',
-                        borderRadius: '24px',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        background: '#ffffff',
+                        borderRadius: '16px',
+                        border: '1px solid #dadce0',
                         maxWidth: '700px',
                         width: '100%',
                         maxHeight: '90vh',
                         overflowY: 'auto',
                         padding: '2.5rem',
                         animation: 'fadeIn 0.4s ease',
-                        position: 'relative'
+                        position: 'relative',
+                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)'
                     }}
                     onClick={(e) => e.stopPropagation()}
                 >
@@ -84,7 +83,7 @@ export default function PhishingModal({ isOpen, onClose, analysisData }) {
                     {/* Header */}
                     <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                         <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>
-                            Security Analysis
+                            Safety Report
                         </h2>
                         <p style={{
                             color: 'var(--text-secondary)',
@@ -159,7 +158,7 @@ export default function PhishingModal({ isOpen, onClose, analysisData }) {
                             alignItems: 'center',
                             gap: '0.5rem'
                         }}>
-                            🔍 Analysis Details
+                            🔍 What We Checked
                         </h4>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -243,7 +242,7 @@ export default function PhishingModal({ isOpen, onClose, analysisData }) {
                             alignItems: 'center',
                             gap: '0.5rem'
                         }}>
-                            💡 Our Recommendation
+                            💡 What Should You Do?
                         </h4>
 
                         <p style={{
@@ -301,7 +300,7 @@ export default function PhishingModal({ isOpen, onClose, analysisData }) {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }

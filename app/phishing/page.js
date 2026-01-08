@@ -108,9 +108,9 @@ export default function PhishingDetection() {
             <div className="container" style={{ maxWidth: '900px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
                     <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎣</div>
-                    <h1>Enhanced Phishing Detection</h1>
+                    <h1>Is This Link Safe?</h1>
                     <p style={{ fontSize: '1.1rem', maxWidth: '700px', margin: '0 auto' }}>
-                        Advanced multi-layer threat analysis combining VirusTotal, DNS reputation, domain age verification, and community reports to give you a comprehensive safety score.
+                        Got a suspicious link? We'll check if it's safe before you click. We analyze the website using multiple security checks to protect you from scams and fake websites.
                     </p>
                 </div>
 
@@ -122,7 +122,7 @@ export default function PhishingDetection() {
                         fontWeight: '600',
                         color: 'var(--text-primary)'
                     }}>
-                        Enter URL to Analyze:
+                        Paste the suspicious link here:
                     </label>
                     <input
                         type="url"
@@ -143,10 +143,10 @@ export default function PhishingDetection() {
                         {loading ? (
                             <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                                 <span className="loading"></span>
-                                {loadingStep || 'Analyzing URL...'}
+                                {loadingStep || 'Checking if this link is safe...'}
                             </span>
                         ) : (
-                            '🔍 Analyze URL with Advanced Verification'
+                            '🔍 Check If This Link Is Safe'
                         )}
                     </button>
 
@@ -156,35 +156,35 @@ export default function PhishingDetection() {
                 </div>
 
                 {/* Info Section */}
-                <div className="card" style={{ background: 'rgba(66, 133, 244, 0.05)' }}>
-                    <h3 style={{ marginBottom: '1rem' }}>🛡️ Multi-Layer Analysis</h3>
+                <div className="card" style={{ background: 'var(--primary-light)' }}>
+                    <h3 style={{ marginBottom: '1rem' }}>🛡️ How We Check If Links Are Safe</h3>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-                        <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                        <div style={{ padding: '1rem', background: 'white', borderRadius: '8px', border: '1px solid var(--border)' }}>
                             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>⚡</div>
-                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Step 1: VirusTotal</div>
+                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Security Scan</div>
                             <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                Check against 70+ threat databases
+                                70+ security experts check this link
                             </div>
                         </div>
-                        <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                        <div style={{ padding: '1rem', background: 'white', borderRadius: '8px', border: '1px solid var(--border)' }}>
                             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🌐</div>
-                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Step 2: DNS Check</div>
+                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Website Reputation</div>
                             <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                Analyze domain reputation
+                                Check if others reported it as unsafe
                             </div>
                         </div>
-                        <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                        <div style={{ padding: '1rem', background: 'white', borderRadius: '8px', border: '1px solid var(--border)' }}>
                             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📅</div>
-                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Domain Age</div>
+                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Website Age</div>
                             <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                Verify registration history
+                                New websites are often scams
                             </div>
                         </div>
-                        <div style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '8px' }}>
+                        <div style={{ padding: '1rem', background: 'white', borderRadius: '8px', border: '1px solid var(--border)' }}>
                             <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>👥</div>
-                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Community</div>
+                            <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>User Reports</div>
                             <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                Check user reports
+                                See if people flagged it as fake
                             </div>
                         </div>
                     </div>
