@@ -102,9 +102,19 @@ export async function POST(request) {
             }
         };
 
+        // Normalize URL for demo checking (remove trailing slashes, convert to lowercase)
+        const normalizedUrl = url.trim().toLowerCase().replace(/\/$/, '');
+
         // Check if URL is a demo URL
-        if (demoUrls[url]) {
-            return Response.json(demoUrls[url]);
+        const demoUrlKeys = Object.keys(demoUrls).map(key => key.toLowerCase());
+        const matchedDemoKey = Object.keys(demoUrls).find(key =>
+            key.toLowerCase() === normalizedUrl ||
+            key.toLowerCase().replace(/\/$/, '') === normalizedUrl
+        );
+
+        if (matchedDemoKey) {
+            console.log('Demo URL matched:', matchedDemoKey);
+            return Response.json(demoUrls[matchedDemoKey]);
         }
 
         // Step 1: Pattern Analysis
