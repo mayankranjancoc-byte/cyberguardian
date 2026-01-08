@@ -5,15 +5,13 @@
     },
     "nav": {
         "home": "Home",
-        "chat": "AI Assistant",
         "awareness": "Cyber Awareness",
-        "phishing": "Phishing Detection",
+        "phishing": "Link Checker",
         "incident": "Incident Response",
         "localAlerts": "Local Alerts",
         "code": "Code Scanner",
         "scanner": "Scanner",
-        "community": "Community",
-        "dashboard": "Dashboard"
+        "community": "Community"
     },
     "hero": {
         "title": "Your All-in-One AI-Powered Cybersecurity Companion",

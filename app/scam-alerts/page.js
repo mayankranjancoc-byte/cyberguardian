@@ -6,24 +6,44 @@ export default function ScamAlertsPage() {
     const [selectedFilter, setSelectedFilter] = useState('all');
     const [userLocation, setUserLocation] = useState('Bhubaneswar, Odisha');
     const [locationPermission, setLocationPermission] = useState('pending');
+    const [hasInteracted, setHasInteracted] = useState(false);
 
+    // Request location permission when user first interacts with the page
     useEffect(() => {
-        // Request location permission on mount
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    // Successfully got location
-                    setLocationPermission('granted');
-                    setUserLocation('Bhubaneswar, Odisha'); // Still use Bhubaneswar for MVP
-                },
-                (error) => {
-                    // Permission denied or error
-                    setLocationPermission('denied');
-                    setUserLocation('Bhubaneswar, Odisha');
-                }
-            );
-        }
-    }, []);
+        const requestLocation = () => {
+            if (!hasInteracted && navigator.geolocation) {
+                setHasInteracted(true);
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        // Successfully got location
+                        setLocationPermission('granted');
+                        setUserLocation('Bhubaneswar, Odisha'); // Still use Bhubaneswar for MVP
+                    },
+                    (error) => {
+                        // Permission denied or error
+                        setLocationPermission('denied');
+                        setUserLocation('Bhubaneswar, Odisha');
+                    }
+                );
+            }
+        };
+
+        // Request on scroll or click, not on mount
+        const handleInteraction = () => {
+            requestLocation();
+            // Remove listeners after first interaction
+            window.removeEventListener('scroll', handleInteraction);
+            window.removeEventListener('click', handleInteraction);
+        };
+
+        window.addEventListener('scroll', handleInteraction);
+        window.addEventListener('click', handleInteraction);
+
+        return () => {
+            window.removeEventListener('scroll', handleInteraction);
+            window.removeEventListener('click', handleInteraction);
+        };
+    }, [hasInteracted]);
 
     const filteredAlerts = getAlertsBySeverity(selectedFilter);
 
