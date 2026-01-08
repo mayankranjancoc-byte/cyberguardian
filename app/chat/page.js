@@ -237,43 +237,27 @@ export default function ChatPage() {
                     Ask me anything about cybersecurity
                 </p>
 
-                {/* Voice Mode Toggle Button */}
-                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
-                    <button
-                        onClick={toggleVoiceMode}
-                        className="btn"
-                        style={{
-                            padding: '0.75rem 1.5rem',
-                            background: voiceMode ? 'var(--success)' : 'var(--primary)',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.5rem'
-                        }}
-                    >
-                        {voiceMode ? '🎤' : '💬'} {voiceMode ? 'Voice Mode Active' : 'Enable Voice Mode'}
-                    </button>
-
-                    {/* Talk to AI Avatar Button */}
-                    <button
-                        onClick={toggleAvatarMode}
-                        className="btn"
-                        style={{
-                            padding: '0.75rem 1.5rem',
-                            background: avatarMode
-                                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-                                : 'linear-gradient(135deg, #4285f4 0%, #1a73e8 100%)',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            fontWeight: '600',
-                            boxShadow: avatarMode
-                                ? '0 4px 20px rgba(102, 126, 234, 0.4)'
-                                : '0 4px 12px rgba(66, 133, 244, 0.3)'
-                        }}
-                    >
-                        🛡️ {avatarMode ? 'Avatar Mode Active' : 'Talk to AI Avatar'}
-                    </button>
-                </div>
+                {/* Talk to AI Avatar Button */}
+                <button
+                    onClick={toggleAvatarMode}
+                    className="btn"
+                    style={{
+                        marginTop: '1rem',
+                        padding: '0.75rem 1.5rem',
+                        background: avatarMode
+                            ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                            : 'linear-gradient(135deg, #4285f4 0%, #1a73e8 100%)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        fontWeight: '600',
+                        boxShadow: avatarMode
+                            ? '0 4px 20px rgba(102, 126, 234, 0.4)'
+                            : '0 4px 12px rgba(66, 133, 244, 0.3)'
+                    }}
+                >
+                    🛡️ {avatarMode ? 'Avatar Mode Active' : 'Talk to AI Avatar'}
+                </button>
             </div>
 
             {/* Immersive Avatar Conversation Interface - Full Screen */}
@@ -765,6 +749,28 @@ export default function ChatPage() {
                         }}
                         disabled={loading}
                     />
+
+                    {/* Mic Button for Voice Mode */}
+                    <button
+                        type="button"
+                        onClick={toggleVoiceMode}
+                        className="btn"
+                        style={{
+                            padding: '0.875rem 1rem',
+                            height: '50px',
+                            background: voiceMode ? 'var(--success)' : 'var(--primary)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            minWidth: '50px',
+                            justifyContent: 'center',
+                            fontSize: '1.25rem',
+                            boxShadow: voiceMode ? '0 0 15px rgba(52, 168, 83, 0.5)' : 'none'
+                        }}
+                        title={voiceMode ? 'Voice Mode Active - Click to disable' : 'Enable Voice Mode'}
+                    >
+                        {voiceMode ? '🎤' : '🎙️'}
+                    </button>
 
                     <button
                         type="submit"
