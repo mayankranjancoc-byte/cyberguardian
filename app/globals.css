@@ -365,6 +365,21 @@ a:hover {
   }
 }
 
+/* Avatar Pulse Animation for Voice Mode */
+@keyframes avatarPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.6), 0 0 60px rgba(102, 126, 234, 0.3);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.9), 0 0 80px rgba(102, 126, 234, 0.5);
+  }
+}
+
 .fade-in {
   animation: fadeIn 0.5s ease;
 }
