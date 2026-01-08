@@ -17,7 +17,7 @@ export default function Home() {
                     WebkitTextFillColor: 'transparent',
                     marginBottom: '1rem'
                 }}>
-                    CyberGuardian AI
+                    CyberRaksha
                 </h1>
                 <p style={{
                     fontSize: '1.5rem',

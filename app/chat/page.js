@@ -6,7 +6,7 @@ export default function ChatPage() {
         {
             role: 'assistant',
             content:
-                "👋 Hello! I'm CyberGuardian AI, your personal cybersecurity assistant. I can help you with phishing detection, security advice, incident response, and more. What would you like to know?",
+                "👋 Hello! I'm CyberRaksha AI, your personal cybersecurity assistant. I can help you with phishing detection, security advice, incident response, and more. What would you like to know?",
         },
     ]);
     const [input, setInput] = useState('');
@@ -334,7 +334,7 @@ export default function ChatPage() {
                                 WebkitTextFillColor: 'transparent',
                                 fontWeight: '700'
                             }}>
-                                CyberGuardian AI
+                                CyberRaksha AI
                             </h2>
                             <p style={{
                                 fontSize: '1.5rem',

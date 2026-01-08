@@ -1,0 +1,34 @@
+{
+    "app": {
+        "name": "CyberRaksha",
+        "tagline": "आपका ऑल-इन-वन AI-संचालित साइबर सुरक्षा साथी"
+    },
+    "nav": {
+        "home": "होम",
+        "chat": "AI सहायक",
+        "awareness": "साइबर जागरूकता",
+        "phishing": "फ़िशिंग पहचान",
+        "incident": "घटना प्रतिक्रिया",
+        "localAlerts": "स्थानीय अलर्ट",
+        "code": "कोड स्कैनर",
+        "scanner": "स्कैनर",
+        "community": "समुदाय",
+        "dashboard": "डैशबोर्ड"
+    },
+    "hero": {
+        "title": "आपका ऑल-इन-वन AI-संचालित साइबर सुरक्षा साथी",
+        "chatButton": "AI से बात करें",
+        "phishingButton": "फ़िशिंग पहचान आज़माएं",
+        "quizButton": "सुरक्षा प्रश्नोत्तरी लें"
+    },
+    "footer": {
+        "copyright": "सभी के लिए साइबर सुरक्षा सुलभ बनाना",
+        "builtWith": "CyberFirst हैकाथॉन के लिए ❤️ से बनाया गया"
+    },
+    "common": {
+        "send": "भेजें",
+        "close": "बंद करें",
+        "loading": "लोड हो रहा है...",
+        "language": "भाषा"
+    }
+}

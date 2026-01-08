@@ -8,7 +8,7 @@ export async function POST(request) {
 
         // Call Gemini AI API
         const geminiResponse = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.AIzaSyBoIiLJVEe9qaqnuAN9wqNkWqXNLQrxfLM}`,
+            `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -17,7 +17,7 @@ export async function POST(request) {
                         {
                             parts: [
                                 {
-                                    text: `You are CyberGuardian AI, a friendly and knowledgeable cybersecurity assistant. Help users with:
+                                    text: `You are CyberRaksha AI, a friendly and knowledgeable cybersecurity assistant. Help users with:
 1. Cybersecurity questions and education
 2. Phishing detection and analysis
 3. Incident response guidance
@@ -100,5 +100,5 @@ function getFallbackResponse(message) {
     }
 
     // Default response
-    return "👋 Hello! I'm CyberGuardian AI, your cybersecurity assistant. I can help you with:\n\n🎣 **Phishing Detection** - Analyze suspicious URLs\n📚 **Security Learning** - Take quizzes and learn best practices\n🚨 **Incident Response** - Get guidance during security incidents\n💻 **Code Security** - Scan code for vulnerabilities\n\nWhat would you like help with today?";
+    return "👋 Hello! I'm CyberRaksha AI, your cybersecurity assistant. I can help you with:\n\n🎣 **Phishing Detection** - Analyze suspicious URLs\n📚 **Security Learning** - Take quizzes and learn best practices\n🚨 **Incident Response** - Get guidance during security incidents\n💻 **Code Security** - Scan code for vulnerabilities\n\nWhat would you like help with today?";
 }

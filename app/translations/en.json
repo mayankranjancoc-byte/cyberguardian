@@ -1,0 +1,34 @@
+{
+    "app": {
+        "name": "CyberRaksha",
+        "tagline": "Your All-in-One AI-Powered Cybersecurity Companion"
+    },
+    "nav": {
+        "home": "Home",
+        "chat": "AI Assistant",
+        "awareness": "Cyber Awareness",
+        "phishing": "Phishing Detection",
+        "incident": "Incident Response",
+        "localAlerts": "Local Alerts",
+        "code": "Code Scanner",
+        "scanner": "Scanner",
+        "community": "Community",
+        "dashboard": "Dashboard"
+    },
+    "hero": {
+        "title": "Your All-in-One AI-Powered Cybersecurity Companion",
+        "chatButton": "Chat with AI",
+        "phishingButton": "Try Phishing Detection",
+        "quizButton": "Take Security Quiz"
+    },
+    "footer": {
+        "copyright": "Making Cybersecurity Accessible to Everyone",
+        "builtWith": "Built with ❤️ for CyberFirst Hackathon"
+    },
+    "common": {
+        "send": "Send",
+        "close": "Close",
+        "loading": "Loading...",
+        "language": "Language"
+    }
+}
