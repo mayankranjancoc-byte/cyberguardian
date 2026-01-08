@@ -1,10 +1,10 @@
 // Mock data for local scam alerts
-// India-specific scam scenarios with realistic details
+// Bhubaneswar, Odisha specific scam scenarios with realistic details
 
 export const scamAlerts = [
     {
         id: 1,
-        location: "Delhi NCR",
+        location: "Bhubaneswar, Odisha",
         title: "Fake Courier Delivery Messages",
         emoji: "📦",
         description: "Many people nearby are receiving SMS about undelivered parcels from courier companies asking them to click a link.",
@@ -26,7 +26,7 @@ export const scamAlerts = [
     },
     {
         id: 2,
-        location: "Mumbai",
+        location: "Cuttack, Odisha",
         title: "Fake Bank Security Calls",
         emoji: "📞",
         description: "Residents are reporting calls from people claiming to be from their bank's security department asking to verify KYC details.",
@@ -48,7 +48,7 @@ export const scamAlerts = [
     },
     {
         id: 3,
-        location: "Bangalore",
+        location: "Puri, Odisha",
         title: "UPI Fake Payment Links",
         emoji: "💳",
         description: "People selling items online are receiving payment links that actually request money instead of collecting it.",
@@ -70,7 +70,7 @@ export const scamAlerts = [
     },
     {
         id: 4,
-        location: "Pune",
+        location: "Khordha, Odisha",
         title: "Fake Job Offer Emails",
         emoji: "💼",
         description: "Job seekers are getting emails from companies offering work-from-home positions that ask for registration fees.",
@@ -92,7 +92,7 @@ export const scamAlerts = [
     },
     {
         id: 5,
-        location: "Hyderabad",
+        location: "Konark, Odisha",
         title: "WhatsApp OTP Scam",
         emoji: "💬",
         description: "Folks are getting WhatsApp messages from friends asking to share the OTP code they're about to receive.",
@@ -114,7 +114,7 @@ export const scamAlerts = [
     },
     {
         id: 6,
-        location: "Chennai",
+        location: "Berhampur, Odisha",
         title: "Electricity Bill Disconnection SMS",
         emoji: "⚡",
         description: "Many residents received messages about electricity disconnection due to unpaid bills with a payment link attached.",
@@ -136,7 +136,7 @@ export const scamAlerts = [
     },
     {
         id: 7,
-        location: "Kolkata",
+        location: "Rourkela, Odisha",
         title: "Fake Investment Schemes on Social Media",
         emoji: "📈",
         description: "Social media groups are promoting investment plans promising guaranteed returns of 50-100% in short periods.",

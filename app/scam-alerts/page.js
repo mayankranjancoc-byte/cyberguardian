@@ -1,10 +1,29 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { scamAlerts, getAlertsBySeverity } from '../data/scamAlerts';
 
 export default function ScamAlertsPage() {
     const [selectedFilter, setSelectedFilter] = useState('all');
-    const [userLocation] = useState('Delhi NCR'); // Mock location for MVP
+    const [userLocation, setUserLocation] = useState('Bhubaneswar, Odisha');
+    const [locationPermission, setLocationPermission] = useState('pending');
+
+    useEffect(() => {
+        // Request location permission on mount
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    // Successfully got location
+                    setLocationPermission('granted');
+                    setUserLocation('Bhubaneswar, Odisha'); // Still use Bhubaneswar for MVP
+                },
+                (error) => {
+                    // Permission denied or error
+                    setLocationPermission('denied');
+                    setUserLocation('Bhubaneswar, Odisha');
+                }
+            );
+        }
+    }, []);
 
     const filteredAlerts = getAlertsBySeverity(selectedFilter);
 
@@ -64,10 +83,11 @@ export default function ScamAlertsPage() {
                             padding: '0.75rem 1.5rem',
                             background: selectedFilter === filter
                                 ? 'var(--primary)'
-                                : 'rgba(26, 26, 46, 0.6)',
+                                : 'var(--bg-secondary)',
+                            color: selectedFilter === filter ? 'white' : 'var(--text-primary)',
                             border: selectedFilter === filter
                                 ? 'none'
-                                : '1px solid rgba(255, 255, 255, 0.1)',
+                                : '1px solid var(--border)',
                             textTransform: 'capitalize'
                         }}
                     >
@@ -88,23 +108,22 @@ export default function ScamAlertsPage() {
                         key={alert.id}
                         className="card"
                         style={{
-                            background: 'rgba(26, 26, 46, 0.7)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            borderRadius: '16px',
-                            border: `1px solid rgba(255, 255, 255, 0.1)`,
+                            background: 'white',
+                            borderRadius: '12px',
+                            border: '1px solid var(--border)',
                             borderLeft: `4px solid ${getSeverityColor(alert.severity)}`,
                             padding: '1.5rem',
                             transition: 'all 0.3s ease',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            boxShadow: 'var(--shadow)'
                         }}
                         onMouseEnter={(e) => {
                             e.currentTarget.style.transform = 'translateY(-4px)';
-                            e.currentTarget.style.boxShadow = `0 12px 40px ${getSeverityColor(alert.severity)}40`;
+                            e.currentTarget.style.boxShadow = `0 8px 24px ${getSeverityColor(alert.severity)}40`;
                         }}
                         onMouseLeave={(e) => {
                             e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+                            e.currentTarget.style.boxShadow = 'var(--shadow)';
                         }}
                     >
                         {/* Card Header */}
@@ -140,9 +159,12 @@ export default function ScamAlertsPage() {
                             fontSize: '0.95rem',
                             lineHeight: '1.6',
                             marginBottom: '1.5rem',
-                            borderLeft: '3px solid rgba(66, 133, 244, 0.3)',
+                            borderLeft: '3px solid var(--primary)',
                             paddingLeft: '1rem',
-                            fontStyle: 'italic'
+                            fontStyle: 'italic',
+                            background: 'var(--primary-light)',
+                            padding: '0.75rem 1rem',
+                            borderRadius: '4px'
                         }}>
                             "{alert.description}"
                         </p>
@@ -162,7 +184,7 @@ export default function ScamAlertsPage() {
                             <ul style={{
                                 margin: 0,
                                 paddingLeft: '1.5rem',
-                                color: 'var(--text-secondary)',
+                                color: 'var(--text-primary)',
                                 fontSize: '0.9rem',
                                 lineHeight: '1.8'
                             }}>
@@ -189,7 +211,7 @@ export default function ScamAlertsPage() {
                             <ul style={{
                                 margin: 0,
                                 paddingLeft: '1.5rem',
-                                color: 'var(--text-secondary)',
+                                color: 'var(--text-primary)',
                                 fontSize: '0.9rem',
                                 lineHeight: '1.8'
                             }}>
@@ -241,11 +263,11 @@ export default function ScamAlertsPage() {
             <div style={{
                 textAlign: 'center',
                 padding: '2rem',
-                background: 'rgba(26, 26, 46, 0.5)',
+                background: 'var(--primary-light)',
                 borderRadius: '12px',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
+                border: '1px solid var(--border)'
             }}>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
+                <p style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontWeight: '600' }}>
                     💡 <strong>Tip:</strong> Share these alerts with family and friends to keep them safe too!
                 </p>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
