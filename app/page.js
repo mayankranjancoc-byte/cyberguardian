@@ -119,20 +119,102 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Stats Section */}
+            {/* Cybersecurity Awareness Stats - Real Data */}
             <div className="container" style={{ marginTop: '4rem' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '2.5rem', fontSize: '2rem' }}>
+                    Real-Time Threat Landscape
+                </h2>
                 <div className="grid" style={{ textAlign: 'center' }}>
-                    <div className="card">
-                        <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '0.5rem' }}>4</h2>
-                        <p style={{ fontSize: '1.1rem', margin: 0 }}>Security Tracks</p>
+                    <div className="card" style={{
+                        background: 'linear-gradient(135deg, rgba(234, 67, 53, 0.15) 0%, rgba(234, 67, 53, 0.05) 100%)',
+                        borderLeft: '4px solid var(--danger)'
+                    }}>
+                        <h2 style={{ fontSize: '3rem', color: 'var(--danger)', marginBottom: '0.5rem' }}>
+                            3.4B
+                        </h2>
+                        <p style={{ fontSize: '1.05rem', margin: 0, color: 'var(--text-primary)', fontWeight: '600' }}>
+                            Phishing Emails Daily
+                        </p>
+                        <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: 'var(--text-secondary)' }}>
+                            Worldwide average in 2024
+                        </p>
                     </div>
-                    <div className="card">
-                        <h2 style={{ fontSize: '3rem', color: 'var(--success)', marginBottom: '0.5rem' }}>8+</h2>
-                        <p style={{ fontSize: '1.1rem', margin: 0 }}>Innovative Features</p>
+                    <div className="card" style={{
+                        background: 'linear-gradient(135deg, rgba(251, 188, 4, 0.15) 0%, rgba(251, 188, 4, 0.05) 100%)',
+                        borderLeft: '4px solid var(--warning)'
+                    }}>
+                        <h2 style={{ fontSize: '3rem', color: 'var(--warning)', marginBottom: '0.5rem' }}>
+                            ₹33,000
+                        </h2>
+                        <p style={{ fontSize: '1.05rem', margin: 0, color: 'var(--text-primary)', fontWeight: '600' }}>
+                            Average Scam Loss
+                        </p>
+                        <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: 'var(--text-secondary)' }}>
+                            Per victim in India (2024)
+                        </p>
                     </div>
-                    <div className="card">
-                        <h2 style={{ fontSize: '3rem', color: 'var(--warning)', marginBottom: '0.5rem' }}>FREE</h2>
-                        <p style={{ fontSize: '1.1rem', margin: 0 }}>For Everyone</p>
+                    <div className="card" style={{
+                        background: 'linear-gradient(135deg, rgba(52, 168, 83, 0.15) 0%, rgba(52, 168, 83, 0.05) 100%)',
+                        borderLeft: '4px solid var(--success)'
+                    }}>
+                        <h2 style={{ fontSize: '3rem', color: 'var(--success)', marginBottom: '0.5rem' }}>
+                            90%
+                        </h2>
+                        <p style={{ fontSize: '1.05rem', margin: 0, color: 'var(--text-primary)', fontWeight: '600' }}>
+                            Preventable Attacks
+                        </p>
+                        <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: 'var(--text-secondary)' }}>
+                            With basic awareness
+                        </p>
+                    </div>
+                </div>
+
+                {/* Additional Awareness Stats */}
+                <div style={{
+                    marginTop: '2rem',
+                    padding: '1.5rem',
+                    background: 'rgba(66, 133, 244, 0.05)',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(66, 133, 244, 0.2)'
+                }}>
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: '1.5rem',
+                        textAlign: 'center'
+                    }}>
+                        <div>
+                            <div style={{ fontSize: '2rem', color: 'var(--primary)', fontWeight: '700' }}>
+                                68%
+                            </div>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                                Data breaches involve human error
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ fontSize: '2rem', color: 'var(--primary)', fontWeight: '700' }}>
+                                43%
+                            </div>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                                Cyberattacks target small businesses
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ fontSize: '2rem', color: 'var(--primary)', fontWeight: '700' }}>
+                                95%
+                            </div>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                                Cybersecurity issues caused by people
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ fontSize: '2rem', color: 'var(--primary)', fontWeight: '700' }}>
+                                300+
+                            </div>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                                New threats created every minute
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
