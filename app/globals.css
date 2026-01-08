@@ -380,6 +380,17 @@ a:hover {
   }
 }
 
+/* Rotation Animation for Avatar Background */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .fade-in {
   animation: fadeIn 0.5s ease;
 }

@@ -18,6 +18,7 @@ export default function ChatPage() {
     const [isListening, setIsListening] = useState(false);
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
+    const [avatarMode, setAvatarMode] = useState(false); // Dedicated avatar conversation mode
     const recognitionRef = useRef(null);
 
     const scrollToBottom = () => {
@@ -174,11 +175,28 @@ export default function ChatPage() {
         if (!newMode) {
             stopListening();
             stopSpeaking();
+            setAvatarMode(false); // Exit avatar mode when voice mode is turned off
         } else {
             // Welcome message when voice mode is activated
             setTimeout(() => {
                 speakText("Voice mode activated. You can now talk to me. Click the microphone to start speaking.");
             }, 500);
+        }
+    };
+
+    const toggleAvatarMode = () => {
+        const newMode = !avatarMode;
+        setAvatarMode(newMode);
+
+        if (newMode && !voiceMode) {
+            // Automatically enable voice mode when avatar mode is activated
+            setVoiceMode(true);
+            setTimeout(() => {
+                speakText("Hello! I'm your cyber security guardian. Let's talk about keeping you safe online.");
+            }, 800);
+        } else if (!newMode) {
+            // Keep voice mode on but exit avatar view
+            speakText("Returning to normal chat.");
         }
     };
 
@@ -220,24 +238,250 @@ export default function ChatPage() {
                 </p>
 
                 {/* Voice Mode Toggle Button */}
-                <button
-                    onClick={toggleVoiceMode}
-                    className="btn"
-                    style={{
-                        marginTop: '1rem',
-                        padding: '0.75rem 1.5rem',
-                        background: voiceMode ? 'var(--success)' : 'var(--primary)',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.5rem'
-                    }}
-                >
-                    {voiceMode ? '🎤' : '💬'} {voiceMode ? 'Voice Mode Active' : 'Enable Voice Mode'}
-                </button>
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
+                    <button
+                        onClick={toggleVoiceMode}
+                        className="btn"
+                        style={{
+                            padding: '0.75rem 1.5rem',
+                            background: voiceMode ? 'var(--success)' : 'var(--primary)',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem'
+                        }}
+                    >
+                        {voiceMode ? '🎤' : '💬'} {voiceMode ? 'Voice Mode Active' : 'Enable Voice Mode'}
+                    </button>
+
+                    {/* Talk to AI Avatar Button */}
+                    <button
+                        onClick={toggleAvatarMode}
+                        className="btn"
+                        style={{
+                            padding: '0.75rem 1.5rem',
+                            background: avatarMode
+                                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                                : 'linear-gradient(135deg, #4285f4 0%, #1a73e8 100%)',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            fontWeight: '600',
+                            boxShadow: avatarMode
+                                ? '0 4px 20px rgba(102, 126, 234, 0.4)'
+                                : '0 4px 12px rgba(66, 133, 244, 0.3)'
+                        }}
+                    >
+                        🛡️ {avatarMode ? 'Avatar Mode Active' : 'Talk to AI Avatar'}
+                    </button>
+                </div>
             </div>
 
-            {/* Animated Avatar - Only shown when voice mode is active */}
-            {voiceMode && (
+            {/* Immersive Avatar Conversation Interface - Full Screen */}
+            {avatarMode && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'rgba(15, 15, 30, 0.98)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    zIndex: 9999,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '2rem'
+                }}>
+                    {/* Avatar Container */}
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '2rem'
+                    }}>
+                        {/* Large Animated Avatar */}
+                        <div
+                            style={{
+                                width: '250px',
+                                height: '250px',
+                                borderRadius: '50%',
+                                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '10rem',
+                                boxShadow: isSpeaking
+                                    ? '0 0 60px rgba(102, 126, 234, 0.9), 0 0 120px rgba(102, 126, 234, 0.6), 0 0 180px rgba(102, 126, 234, 0.3)'
+                                    : isListening
+                                        ? '0 0 40px rgba(66, 133, 244, 0.8), 0 0 80px rgba(66, 133, 244, 0.4)'
+                                        : '0 20px 60px rgba(0, 0, 0, 0.5)',
+                                animation: isSpeaking ? 'avatarPulse 1.2s ease-in-out infinite' : 'none',
+                                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                border: '6px solid rgba(255, 255, 255, 0.3)',
+                                position: 'relative',
+                                overflow: 'hidden'
+                            }}
+                        >
+                            {/* Animated Background Gradient */}
+                            <div style={{
+                                position: 'absolute',
+                                top: '-50%',
+                                left: '-50%',
+                                width: '200%',
+                                height: '200%',
+                                background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
+                                animation: isSpeaking ? 'rotate 8s linear infinite' : 'none'
+                            }} />
+                            <span style={{ position: 'relative', zIndex: 1 }}>🛡️</span>
+                        </div>
+
+                        {/* Status Display */}
+                        <div style={{
+                            textAlign: 'center',
+                            minHeight: '100px'
+                        }}>
+                            <h2 style={{
+                                fontSize: '2rem',
+                                marginBottom: '1rem',
+                                background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                fontWeight: '700'
+                            }}>
+                                CyberGuardian AI
+                            </h2>
+                            <p style={{
+                                fontSize: '1.5rem',
+                                color: isSpeaking ? 'var(--success)' : isListening ? 'var(--primary)' : 'var(--text-secondary)',
+                                fontWeight: '600',
+                                minHeight: '2rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '0.75rem'
+                            }}>
+                                {isSpeaking && (
+                                    <>
+                                        <span style={{ fontSize: '1.75rem' }}>🔊</span>
+                                        <span>Speaking...</span>
+                                    </>
+                                )}
+                                {isListening && !isSpeaking && (
+                                    <>
+                                        <span style={{ fontSize: '1.75rem' }}>🎤</span>
+                                        <span>Listening...</span>
+                                    </>
+                                )}
+                                {!isSpeaking && !isListening && (
+                                    <>
+                                        <span style={{ fontSize: '1.75rem' }}>✨</span>
+                                        <span>Ready to help you stay safe</span>
+                                    </>
+                                )}
+                            </p>
+                        </div>
+
+                        {/* Avatar Mode Controls */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '1rem',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            marginTop: '2rem'
+                        }}>
+                            <button
+                                onClick={isListening ? stopListening : startListening}
+                                disabled={loading}
+                                className="btn"
+                                style={{
+                                    padding: '1.25rem 2.5rem',
+                                    fontSize: '1.25rem',
+                                    background: isListening ? 'var(--danger)' : 'linear-gradient(135deg, #34a853 0%, #188038 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.75rem',
+                                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)',
+                                    minWidth: '200px',
+                                    justifyContent: 'center'
+                                }}
+                            >
+                                {isListening ? (
+                                    <>
+                                        <span style={{ fontSize: '2rem' }}>⏹️</span>
+                                        <span>Stop</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span style={{ fontSize: '2rem' }}>🎤</span>
+                                        <span>Start Talking</span>
+                                    </>
+                                )}
+                            </button>
+
+                            <button
+                                onClick={stopSpeaking}
+                                disabled={!isSpeaking}
+                                className="btn"
+                                style={{
+                                    padding: '1.25rem 2.5rem',
+                                    fontSize: '1.25rem',
+                                    opacity: isSpeaking ? 1 : 0.5,
+                                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)'
+                                }}
+                            >
+                                <span style={{ fontSize: '2rem' }}>🔇</span> Stop Speaking
+                            </button>
+
+                            <button
+                                onClick={() => setIsMuted(!isMuted)}
+                                className="btn"
+                                style={{
+                                    padding: '1.25rem 2.5rem',
+                                    fontSize: '1.25rem',
+                                    background: isMuted ? 'var(--warning)' : 'var(--primary)',
+                                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)'
+                                }}
+                            >
+                                <span style={{ fontSize: '2rem' }}>{isMuted ? '🔇' : '🔊'}</span>
+                                {isMuted ? 'Unmute' : 'Mute'}
+                            </button>
+                        </div>
+
+                        {/* Exit Avatar Mode Button */}
+                        <button
+                            onClick={toggleAvatarMode}
+                            className="btn"
+                            style={{
+                                padding: '1rem 2rem',
+                                marginTop: '2rem',
+                                background: 'rgba(26, 26, 46, 0.8)',
+                                border: '2px solid rgba(255, 255, 255, 0.2)',
+                                backdropFilter: 'blur(10px)',
+                                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)'
+                            }}
+                        >
+                            💬 Switch to Text Chat
+                        </button>
+
+                        {/* Instruction Text */}
+                        <p style={{
+                            fontSize: '0.95rem',
+                            color: 'var(--text-secondary)',
+                            marginTop: '2rem',
+                            textAlign: 'center',
+                            maxWidth: '500px',
+                            lineHeight: '1.6'
+                        }}>
+                            Click "Start Talking", then speak your question. I'll respond with both voice and text to help you stay safe online.
+                        </p>
+                    </div>
+                </div>
+            )}
+
+            {/* Original Small Avatar - Only shown in voice mode when avatar mode is OFF */}
+            {voiceMode && !avatarMode && (
                 <div style={{
                     position: 'fixed',
                     top: '120px',
@@ -276,8 +520,8 @@ export default function ChatPage() {
                 </div>
             )}
 
-            {/* Voice Controls Panel - Only shown when voice mode is active */}
-            {voiceMode && (
+            {/* Voice Controls Panel - Only shown when voice mode is active AND avatar mode is OFF */}
+            {voiceMode && !avatarMode && (
                 <div style={{
                     background: 'rgba(26, 26, 46, 0.9)',
                     backdropFilter: 'blur(15px)',
