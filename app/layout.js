@@ -91,6 +91,17 @@ export default function RootLayout({ children }) {
                             }}>
                                 🚨 Incident
                             </a>
+                            <a href="/scam-alerts" style={{
+                                color: '#b3b3b3',
+                                textDecoration: 'none',
+                                transition: 'color 0.3s',
+                                fontWeight: '500',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem'
+                            }}>
+                                🗺️ Local Alerts
+                            </a>
                             <a href="/code-security" style={{
                                 color: '#b3b3b3',
                                 textDecoration: 'none',
