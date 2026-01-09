@@ -30,24 +30,6 @@ export default function PhishingDetection() {
 
             const vtData = await vtResponse.json();
 
-            // Check if API returned a complete hardcoded response (for demo URLs)
-            if (vtResponse.ok && vtData.score !== undefined && vtData.recommendation !== undefined) {
-                // Use the complete response from API (demo URL case)
-                setAnalysisData({
-                    score: vtData.score,
-                    vtResult: {
-                        malicious: vtData.virusTotalScore || 0,
-                        suspicious: 0
-                    },
-                    deepAnalysis: vtData.details || {},
-                    recommendation: vtData.recommendation,
-                    url: url.trim()
-                });
-                setModalOpen(true);
-                setLoading(false);
-                return;
-            }
-
             if (vtResponse.ok && vtData.virusTotalScore !== undefined) {
                 // Prepare VirusTotal result in expected format
                 const vtResult = {

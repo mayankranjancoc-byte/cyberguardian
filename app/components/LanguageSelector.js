@@ -126,7 +126,7 @@ export default function LanguageSelector() {
                                 {lang.nativeName && (
                                     <div style={{
                                         fontSize: '0.8rem',
-                                        color: 'var(--text-secondary)',
+                                        color: 'rgba(255, 255, 255, 0.6)',
                                         marginTop: '0.1rem'
                                     }}>
                                         {lang.nativeName}
