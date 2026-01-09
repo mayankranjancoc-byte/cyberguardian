@@ -101,7 +101,7 @@ export default function LanguageSelector() {
                                 background: language === lang.code ? 'rgba(66, 133, 244, 0.2)' : 'transparent',
                                 border: 'none',
                                 borderRadius: '8px',
-                                color: 'var(--text-primary)',
+                                color: 'rgba(255, 255, 255, 0.95)',
                                 fontSize: '0.95rem',
                                 cursor: 'pointer',
                                 transition: 'all 0.2s ease',
@@ -120,7 +120,10 @@ export default function LanguageSelector() {
                         >
                             <span style={{ fontSize: '1.25rem' }}>{lang.emoji}</span>
                             <div style={{ flex: 1 }}>
-                                <div style={{ fontWeight: language === lang.code ? '600' : '400' }}>
+                                <div style={{
+                                    fontWeight: language === lang.code ? '600' : '400',
+                                    color: 'rgba(255, 255, 255, 0.95)'
+                                }}>
                                     {lang.name}
                                 </div>
                                 {lang.nativeName && (
